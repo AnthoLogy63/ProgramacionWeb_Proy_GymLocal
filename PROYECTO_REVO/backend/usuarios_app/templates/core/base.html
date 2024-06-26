@@ -9,7 +9,7 @@
     <h2>Inicio</h2>
     <ul>
         <li> <a href={% url 'home' %}>Inicio</a></li>
-        <li> <a href={% url 'products' %}>Productos</a></li>
+        <li> <a href={% url 'entrenamientos' %}>entrenamientos</a></li>
 
         {% if request.user.is_authenticated %}
             <li> <a href={% url 'exit' %}>Salir</a></li>
