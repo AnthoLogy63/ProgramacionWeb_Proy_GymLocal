@@ -11,4 +11,7 @@ def entrenamientos(request):
 
 def exit(request):
     logout(request)
-    return redirect('home')
+    return redirect('home') 
+
+def register(request):
+    return render(request, 'registration/register.html')
