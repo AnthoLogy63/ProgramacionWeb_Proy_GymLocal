@@ -3,4 +3,4 @@ from django.contrib.auth.models import AbstractUser
 
 class Users(AbstractUser):
     membership_active = models.BooleanField(default=True)
-    avatar = models.ImageField(upload_to='media/', null=True, blank=True)
+    avatar = models.ImageField(default='userDefect.jpg', upload_to='users/', null=True, blank=True)
