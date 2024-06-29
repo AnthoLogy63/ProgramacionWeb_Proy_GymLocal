@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    h3 {
+        color: #5A5A5A;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    h4 {
+        color: #007BFF;
+        text-align: center;
+        font-size: 20px;
+    }
+    hr {
+        border: 1px solid #007BFF;
+        width: 50%;
+        margin: 20px auto;
+    }
+</style>
+
+<h3>Inicio</h3>
+{% if request.user.is_authenticated %}
+    <hr>
+    <h4>{{ user.username | upper }}, bienvenido</h4>
+    <img src={{ user.avatar.url }} alt="">
+{% endif %}
+
+{% endblock %}
