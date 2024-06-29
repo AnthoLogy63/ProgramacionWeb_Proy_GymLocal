@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from usuarios_app import views
 
 urlpatterns = [
     path('', include('usuarios_app.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('api/hello/', views.hello_world, name='hello_world'),
 ]
 
 if settings.DEBUG:

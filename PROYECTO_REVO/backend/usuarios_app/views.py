@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
 from .forms import RegisterForm
+from django.http import JsonResponse
+
+def hello_world(request):
+    return JsonResponse({'message': 'Hola Mundo desde Django'})
+
+
 
 def home(request):
     return render(request, 'core/home.html')

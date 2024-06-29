@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'usuarios_app',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -99,7 +102,11 @@ AUTH_PASSWORD_VALIDATORS = [
     #    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     #},
 ]
-
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200',
+    # add other origins if needed
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
