@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
-import { ApiService } from '../../api.service';
+import { ApiAuthService } from '../../core/services/api-auth.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -13,10 +13,10 @@ import { of } from 'rxjs';
   styleUrl: './navmenu.component.css'
 })
 export class NavmenuComponent {
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(private apiAuthService: ApiAuthService, private router: Router) {}
 
   logout(): void {
-    this.apiService.logout().pipe(
+    this.apiAuthService.logout().pipe(
       catchError(error => {
         console.error('Error logging out', error);
         return of(null);
@@ -25,11 +25,10 @@ export class NavmenuComponent {
       response => {
         if (response) {
           console.log('Logout successful', response);
-          this.apiService.clearCurrentUser();
+          this.apiAuthService.clearCurrentUser();
           this.router.navigate(['/login']);
         } else {
           console.error('Logout response was null or undefined');
-          // Aquí puedes manejar el caso específico en que response sea null o undefined
         }
       }
     );

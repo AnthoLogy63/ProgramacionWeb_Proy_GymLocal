@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../api.service';
+import { ApiAuthService } from '../../core/services/api-auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import { ApiService } from '../../api.service';
 export class HomeComponent {
   currentUser: string | null;
 
-  constructor(private apiService: ApiService) {
-    this.currentUser = this.apiService.getCurrentUser();
+  constructor(private apiAuthService: ApiAuthService) {
+    this.currentUser = this.apiAuthService.getCurrentUser();
   }
 }
