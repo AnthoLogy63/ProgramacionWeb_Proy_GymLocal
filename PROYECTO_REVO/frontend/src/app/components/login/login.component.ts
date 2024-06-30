@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
 import { ApiAuthService } from '../../core/services/api-auth.service';
 
 
@@ -22,7 +19,6 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
     private router: Router,
     private apiAuthService: ApiAuthService,
   ) {
@@ -34,26 +30,20 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      const formData = new FormData();
-      formData.append('username', this.loginForm.value.username);
-      formData.append('password', this.loginForm.value.password);
+      const { username, password } = this.loginForm.value;
 
-      this.http.post('http://localhost:8000/api/login/', formData)
-        .pipe(
-          catchError(error => {
-            console.error('Error logging in', error);
-            return of(null); // Devuelve un observable de null en caso de error
-          })
-        )
-        .subscribe(
-          response => {
-            if (response) {
-              console.log('Login successful', response);
-              this.apiAuthService.setCurrentUser(this.loginForm.value.username); // Guarda el nombre de usuario
-              this.router.navigate(['/home']); // Redirige a la ruta '/home' si el inicio de sesión es exitoso
-            }
+      this.apiAuthService.login(username, password).subscribe(
+        response => {
+          if (response) {
+            console.log('Login successful', response);
+            this.apiAuthService.setCurrentUser(username); 
+            this.router.navigate(['/home']);
           }
-        );
+        },
+        error => {
+          console.error('Error logging in', error);
+        }
+      );
     }
   }
 

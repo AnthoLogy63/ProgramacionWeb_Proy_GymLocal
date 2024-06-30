@@ -19,14 +19,14 @@ export class NavmenuComponent {
     this.apiAuthService.logout().pipe(
       catchError(error => {
         console.error('Error logging out', error);
-        return of(null);
+        return of(null); 
       })
     ).subscribe(
       response => {
         if (response) {
           console.log('Logout successful', response);
           this.apiAuthService.clearCurrentUser();
-          this.router.navigate(['/login']);
+          this.router.navigate(['/login']); 
         } else {
           console.error('Logout response was null or undefined');
         }
