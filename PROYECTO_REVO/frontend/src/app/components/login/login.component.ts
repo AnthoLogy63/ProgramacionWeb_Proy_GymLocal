@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { ApiService } from '../../api.service';
+
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,8 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private apiService: ApiService,
   ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -46,6 +49,7 @@ export class LoginComponent {
           response => {
             if (response) {
               console.log('Login successful', response);
+              this.apiService.setCurrentUser(this.loginForm.value.username); // Guarda el nombre de usuario
               this.router.navigate(['/home']); // Redirige a la ruta '/home' si el inicio de sesión es exitoso
             }
           }
@@ -53,7 +57,6 @@ export class LoginComponent {
     }
   }
 
-  // Método para verificar si un campo del formulario ha sido tocado y es inválido
   isInvalidControl(controlName: string): boolean {
     const control = this.loginForm.get(controlName);
     return !!(control && control.invalid && control.touched);
