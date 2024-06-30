@@ -19,6 +19,10 @@ export class ApiAuthService {
     return this.http.post(`${this.apiUrl}/logout/`, {});
   }
 
+  isLoggedIn(): boolean {
+    return !!this.currentUser;
+  }
+
 
   //Métodos para guardar el nombre del usuario
   setCurrentUser(username: string): void {
