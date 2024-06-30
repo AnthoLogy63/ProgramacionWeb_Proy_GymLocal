@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { ApiRegUserService } from '../../core/services/api-reg-user.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +16,11 @@ import { of } from 'rxjs';
 export class RegisterComponent {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private apiRegUserService: ApiRegUserService,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -38,21 +40,18 @@ export class RegisterComponent {
         }
       });
 
-      this.http.post('http://localhost:8000/api/register/', formData)
-        .pipe(
-          catchError(error => {
-            console.error('Error registering user', error);
-            return of(null);
-          })
-        )
-        .subscribe(
-          response => {
+      this.apiRegUserService.registerUser(formData)
+        .subscribe({
+          next: (response) => {
             if (response) {
               console.log('User registered successfully', response);
-              this.router.navigate(['/home']);
+              this.router.navigate(['/login']);
             }
+          },
+          error: (error) => {
+            console.error('Error registering user', error);
           }
-        );
+        });
     }
   }
 }

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { ApiService } from '../../api.service';
+import { ApiAuthService } from '../../core/services/api-auth.service';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private apiService: ApiService,
+    private apiAuthService: ApiAuthService,
   ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -49,7 +49,7 @@ export class LoginComponent {
           response => {
             if (response) {
               console.log('Login successful', response);
-              this.apiService.setCurrentUser(this.loginForm.value.username); // Guarda el nombre de usuario
+              this.apiAuthService.setCurrentUser(this.loginForm.value.username); // Guarda el nombre de usuario
               this.router.navigate(['/home']); // Redirige a la ruta '/home' si el inicio de sesión es exitoso
             }
           }
