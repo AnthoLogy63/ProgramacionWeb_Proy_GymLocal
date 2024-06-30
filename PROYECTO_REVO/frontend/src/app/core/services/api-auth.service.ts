@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiAuthService {
   private apiUrl = 'http://localhost:8000/api';
   private currentUser: string | null = null;
-  
+
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
@@ -19,14 +19,14 @@ export class ApiAuthService {
     return this.http.post(`${this.apiUrl}/logout/`, {});
   }
 
+
+  //Métodos para guardar el nombre del usuario
   setCurrentUser(username: string): void {
     this.currentUser = username;
   }
-
   getCurrentUser(): string | null {
     return this.currentUser;
   }
-
   clearCurrentUser(): void {
     this.currentUser = null;
   }
