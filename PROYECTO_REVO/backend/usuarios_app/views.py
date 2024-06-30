@@ -8,7 +8,6 @@ def hello_world(request):
     return JsonResponse({'message': 'Hola Mundo desde Django'})
 
 
-
 def home(request):
     return render(request, 'core/home.html')
 
@@ -38,3 +37,21 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'registration/register.html', {'form': form})
+
+
+
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import UserSerializer
+
+class UserCreate(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            # Print errors to the console for debugging
+            print(serializer.errors)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
