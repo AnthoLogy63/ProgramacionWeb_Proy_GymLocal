@@ -1,0 +1,22 @@
+<div>
+  <h1>Iniciar Sesión</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Nombre de usuario:</label>
+      <input id="username" formControlName="username" type="text">
+      <div *ngIf="isInvalidControl('username')" class="text-danger">
+        Nombre de usuario es requerido
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Contraseña:</label>
+      <input id="password" formControlName="password" type="password">
+      <div *ngIf="isInvalidControl('password')" class="text-danger">
+        Contraseña es requerida
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+  </form>
+</div>
