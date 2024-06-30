@@ -1,50 +1,28 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout, login, authenticate
-from .forms import RegisterForm
-from django.http import JsonResponse
-
-def hello_world(request):
-    return JsonResponse({'message': 'Hola Mundo desde Django'})
-
-
-def home(request):
-    return render(request, 'core/home.html')
-
-@login_required 
-def entrenamientos(request):
-    return render(request, 'core/entrenamientos.html')
-
-def exit(request):
-    logout(request)
-    return redirect('home') 
-
-def register(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            first_name = form.cleaned_data.get('first_name')
-            last_name = form.cleaned_data.get('last_name')
-            user.first_name = first_name
-            user.last_name = last_name
-            user.save()
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('home')  
-    else:
-        form = RegisterForm()
-    return render(request, 'registration/register.html', {'form': form})
-
-
-
+from django.contrib.auth import authenticate, login, logout
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import UserSerializer
 
+@api_view(['POST'])
+def logout_view(request):
+    logout(request)
+    return Response({'message': 'Sesión cerrada exitosamente'}, status=status.HTTP_200_OK)
+
+@csrf_exempt
+@api_view(['POST'])
+def login_view(request):
+    username = request.data.get('username')
+    password = request.data.get('password')
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return Response({'message': 'Inicio de sesión exitoso'}, status=status.HTTP_200_OK)
+    else:
+        return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_400_BAD_REQUEST)
+    
 class UserCreate(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
