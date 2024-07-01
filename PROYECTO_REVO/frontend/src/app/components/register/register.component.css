@@ -42,6 +42,12 @@
   border: #000000a6;
   border-bottom:solid 0.5px #FFF112;
   padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.registerForm input::placeholder {
+  color: #ffffff; 
+  font-style: normal; 
 }
 
 
