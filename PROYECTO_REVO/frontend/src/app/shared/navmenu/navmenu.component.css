@@ -1,0 +1,11 @@
+.navmenu {
+  position: fixed; /* O puedes usar position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #33333300;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1em;
+  z-index: 1000; /* Asegúrate de que este valor sea mayor que el de otros elementos */
+}
