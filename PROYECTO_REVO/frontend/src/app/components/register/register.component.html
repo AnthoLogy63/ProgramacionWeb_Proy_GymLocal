@@ -7,8 +7,7 @@
     <form class="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
       <h1>Registre su cuenta Revo</h1>
       <div>
-        <label for="username">Nombre de usuario:</label>
-        <input id="username" formControlName="username" type="text">
+        <input id="username" formControlName="username" type="text" placeholder="Nombre de Usuario">
         <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched">
           El nombre de usuario es requerido
         </div>
