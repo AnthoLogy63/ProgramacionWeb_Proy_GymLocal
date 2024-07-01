@@ -26,6 +26,13 @@
           La contraseña es requerida
         </div>
       </div>
+
+      <div>
+        <input id="password" formControlName="password" type="password" placeholder="Repetir Contraseña">
+        <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+          La contraseña es requerida
+        </div>
+      </div>
   
       <div> 
         <input id="first_name" formControlName="first_name" type="text" placeholder="Nombre">
