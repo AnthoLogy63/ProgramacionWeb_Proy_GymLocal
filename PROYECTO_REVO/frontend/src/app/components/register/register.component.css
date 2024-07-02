@@ -114,10 +114,11 @@ font-size: 9px;
   color: black;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .registerButton:hover {
-  background-color: #ffef1200;
-  border: solid 1px  #000000;
+  background-color: #00000067;
+  border: solid 1px  #FFF112;
+  color: #FFF112;
 }
