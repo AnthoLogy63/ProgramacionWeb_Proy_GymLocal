@@ -12,6 +12,22 @@
     <form class="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
       <h1>Registre su cuenta Revo</h1>
       <input 
+        id="first_name" 
+        formControlName="first_name" 
+        type="text" 
+        [placeholder]="'Nombre' + (registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched}"
+      >
+
+      <input 
+        id="last_name" 
+        formControlName="last_name" 
+        type="text" 
+        [placeholder]="'Apellido' + (registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched}"
+      >
+      
+      <input 
         id="username" 
         formControlName="username" 
         type="text" 
@@ -41,22 +57,6 @@
         type="password" 
         [placeholder]="'Repetir Contraseña' + (registerForm.controls['repeat_password'].invalid && registerForm.controls['repeat_password'].touched || !passwordsMatch() && registerForm.controls['repeat_password'].touched ? ' *' : '')"
         [ngClass]="{'input-error': registerForm.controls['repeat_password'].invalid && registerForm.controls['repeat_password'].touched || !passwordsMatch() && registerForm.controls['repeat_password'].touched}"
-      >
-
-      <input 
-        id="first_name" 
-        formControlName="first_name" 
-        type="text" 
-        [placeholder]="'Nombre' + (registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched ? ' *' : '')"
-        [ngClass]="{'input-error': registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched}"
-      >
-
-      <input 
-        id="last_name" 
-        formControlName="last_name" 
-        type="text" 
-        [placeholder]="'Apellido' + (registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched ? ' *' : '')"
-        [ngClass]="{'input-error': registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched}"
       >
       <button class="registerButton" type="submit" [disabled]="registerForm.invalid">Registrar</button>
     </form>
