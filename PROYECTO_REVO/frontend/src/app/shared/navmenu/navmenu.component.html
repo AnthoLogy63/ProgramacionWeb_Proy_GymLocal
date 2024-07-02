@@ -1,8 +1,11 @@
 <nav class="navmenu">
   <ul>
-    <li><a [routerLink]="['/home']">home</a></li>
-    <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">login</a></li>
+    <li><a [routerLink]="['/home']">Home</a></li>
+    <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">Login</a></li>
     <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">Cerrar Sesión</a></li>
-    <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">register</a></li>
+    <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">Register</a></li>
+    <li><a routerLink="/espacios">Espacios</a></li>
+
+    
   </ul>
 </nav>  

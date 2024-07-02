@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiAuthService } from '../../core/services/api-auth.service';
 
 @Component({
   selector: 'app-espacios',
