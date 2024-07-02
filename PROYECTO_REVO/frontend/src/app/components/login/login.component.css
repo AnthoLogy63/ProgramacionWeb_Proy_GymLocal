@@ -3,8 +3,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+    height: 93vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,14 +33,14 @@
 }
 
 .loginCont{
-    background-color:#00000000;
-    font-size: 9.5px;
-}
-
-.registerCont{
     color:#FFF112;
     background-color:#000000;
     font-size: 9px;
+}
+
+.registerCont{
+    background-color:#00000000;
+    font-size: 9.5px;
 }
 
 .formContainer{
@@ -57,22 +56,22 @@
     flex-direction: column;
   }
 
-  .registerForm{
+  .loginForm{
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
   
-  .registerForm h1{
+  .loginForm h1{
     font-size: 18px;
     margin-bottom: 18px;
     font-weight: normal;
   }
 
-  .registerForm input{
+  .loginForm input{
     width: 250px;
     font-size: 16px;
     background-color: #ffffff00;
@@ -82,20 +81,42 @@
     border-bottom: solid 0.5px #FFF112;
     padding-left: 15px;
     padding-bottom: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     margin-top: 5px;
   }
   
-  .registerForm input.input-error {
+  .loginForm input.input-error {
     border-bottom: 2px solid red;
   }
   
-  .registerForm input::placeholder {
+  .loginForm input::placeholder {
     color: #ffffff; 
     font-style: normal; 
     font-weight: normal;
   }
   
-  .registerForm input:focus {
+  .loginForm input:focus {
     outline: none;
+  }
+
+  .loginButton {
+    position: absolute;
+    height: 36px;
+    width: 130px;
+    right: 35px;
+    bottom: 30px;
+    border-radius: 8px;
+    border: #00000000;
+    background-color: #FFF112;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  
+  .loginButton:hover {
+    background-color: #00000067;
+    border: solid 1px  #FFF112;
+    color: #FFF112;
   }
