@@ -25,6 +25,7 @@ export class RegisterComponent {
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      repeat_password: ['', Validators.required],
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
     });
@@ -53,5 +54,9 @@ export class RegisterComponent {
           }
         });
     }
+  }
+
+  passwordsMatch(): boolean {
+    return this.registerForm.get('password')?.value === this.registerForm.get('repeat_password')?.value;
   }
 }
