@@ -1,1 +1,6 @@
-<p>espacios works!</p>
+<div *ngFor="let local of locales" class="local">
+    <h2>{{ local.sede }}</h2>
+    <p>{{ local.direccion }}</p>
+    <p>{{ local.referencia }}</p>
+  </div>
+  
