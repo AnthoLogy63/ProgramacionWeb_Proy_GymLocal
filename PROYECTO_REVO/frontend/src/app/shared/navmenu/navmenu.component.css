@@ -6,6 +6,107 @@
   background-color: #33333300;
   color: rgb(0, 0, 0);
   text-align: center;
-  padding: 1em;
+  padding: 0.25rem;
   z-index: 1000; /* Asegúrate de que este valor sea mayor que el de otros elementos */
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Contenedor principal */
+.home-container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #111;
+  
+}
+
+/* Logo */
+.logo img {
+  height: 50px;
+}
+
+/* Menú de navegación */
+.navmenu {
+  margin-left: 1rem; /* Ajusta este valor según sea necesario */
+}
+
+.navmenu ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu ul li {
+  margin: 0 ;
+}
+
+.navmenu ul li a {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.navmenu ul li a:hover {
+  background-color: #FFF112; /* Color amarillo */
+}
+
+@media (min-width: 760px) {
+    .navmenu ul {
+      flex-direction: row;
+      justify-content: space-around; /* Cambiado para alinear el contenido a la izquierda */
+  }
+
+  .navmenu ul li {
+      margin-right: 3rem; /* Espacio entre elementos de navegación */
+  }
+}
+/* Contenido principal */
+.main-content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/assets/indexfinal.jpg') no-repeat center center/cover;
+}
+
+/* Superposición de texto */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-overlay h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.text-overlay .highlight {
+  color: #FFF112; /* Color amarillo */
+}
+
+.text-overlay p {
+  font-size: 1.5rem;
+  margin-top: 20px;
 }

@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .home-container {
+    text-align: center;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #141313;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  
+  .main-content {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    background: url('/assets/pechugonindex.png') no-repeat center center/cover;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .text-overlay h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .text-overlay .highlight {
+    color: #F5E302; /* Color amarillo */
+  }
+
+  
+  
+  .text-overlay p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
