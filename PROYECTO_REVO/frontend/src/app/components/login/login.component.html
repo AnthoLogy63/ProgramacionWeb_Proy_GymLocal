@@ -1,6 +1,14 @@
 <div class="body-login">
-  <h1>Iniciar Sesión</h1>
+  <div class="register-login">
+    <div class="loginCont">
+      <h2>Iniciar Sesíon</h2>
+    </div>
+    <div class="registerCont">
+      <h2>Registrarse</h2>
+    </div>
+  </div>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1>ingrese su cuenta Revo</h1>
     <div>
       <label for="username">Nombre de usuario:</label>
       <input id="username" formControlName="username" type="text">
