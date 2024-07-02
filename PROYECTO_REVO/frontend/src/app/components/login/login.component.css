@@ -1,0 +1,45 @@
+.body-login{
+    background-image: url('/assets/login-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#FFF112;
+    width: 270px;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.loginCont, .registerCont {
+    border-radius: 5px;
+    width: 47%;
+    height: 27px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginCont{
+    background-color:#00000000;
+    font-size: 9.5px;
+}
+
+.registerCont{
+    color:#FFF112;
+    background-color:#000000;
+    font-size: 9px;
+}
