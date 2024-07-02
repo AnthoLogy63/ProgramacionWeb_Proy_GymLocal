@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body-register">
   <div class="formContainer">
     <div class="register-login">
       <div class="loginCont">
@@ -11,48 +11,53 @@
 
     <form class="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
       <h1>Registre su cuenta Revo</h1>
-      <div>
-        <input id="username" formControlName="username" type="text" placeholder="Nombre de Usuario">
-        <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched">
-          El nombre de usuario es requerido
-        </div>
-      </div>
-  
-      <div>
-        <input id="email" formControlName="email" type="email" placeholder="Correo electrónico">
-        <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
-          Correo electrónico inválido
-        </div>
-      </div>
-  
-      <div>
-        <input id="password" formControlName="password" type="password" placeholder="Contraseña">
-        <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
-          La contraseña es requerida
-        </div>
-      </div>
+      <input 
+        id="first_name" 
+        formControlName="first_name" 
+        type="text" 
+        [placeholder]="'Nombre' + (registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched}"
+      >
 
-      <div>
-        <input id="password" formControlName="password" type="password" placeholder="Repetir Contraseña">
-        <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
-          La contraseña es requerida
-        </div>
-      </div>
-  
-      <div> 
-        <input id="first_name" formControlName="first_name" type="text" placeholder="Nombre">
-        <div *ngIf="registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched">
-          El nombre es requerido
-        </div>
-      </div>
-  
-      <div>
-        <input id="last_name" formControlName="last_name" type="text" placeholder="Apellido">
-        <div *ngIf="registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched">
-          El apellido es requerido
-        </div>
-      </div>
-  
+      <input 
+        id="last_name" 
+        formControlName="last_name" 
+        type="text" 
+        [placeholder]="'Apellido' + (registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched}"
+      >
+      
+      <input 
+        id="username" 
+        formControlName="username" 
+        type="text" 
+        [placeholder]="'Nombre de Usuario' + (registerForm.controls['username'].invalid && registerForm.controls['username'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['username'].invalid && registerForm.controls['username'].touched}  "
+      >
+
+      <input 
+        id="email" 
+        formControlName="email" 
+        type="email" 
+        [placeholder]="'Correo electrónico' + (registerForm.controls['email'].invalid && registerForm.controls['email'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['email'].invalid && registerForm.controls['email'].touched}"
+      >
+
+      <input 
+        id="password" 
+        formControlName="password" 
+        type="password" 
+        [placeholder]="'Contraseña' + (registerForm.controls['password'].invalid && registerForm.controls['password'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['password'].invalid && registerForm.controls['password'].touched}"
+      >
+
+      <input 
+        id="repeat_password" 
+        formControlName="repeat_password" 
+        type="password" 
+        [placeholder]="'Repetir Contraseña' + (registerForm.controls['repeat_password'].invalid && registerForm.controls['repeat_password'].touched || !passwordsMatch() && registerForm.controls['repeat_password'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': registerForm.controls['repeat_password'].invalid && registerForm.controls['repeat_password'].touched || !passwordsMatch() && registerForm.controls['repeat_password'].touched}"
+      >
       <button class="registerButton" type="submit" [disabled]="registerForm.invalid">Registrar</button>
     </form>
   </div>

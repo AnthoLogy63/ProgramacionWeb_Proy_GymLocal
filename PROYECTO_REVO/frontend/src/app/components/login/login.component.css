@@ -1,0 +1,123 @@
+
+.body-login{
+    background-image: url('/assets/login-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#FFF112;
+    width: 270px;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.loginCont, .registerCont {
+    border-radius: 5px;
+    width: 47%;
+    height: 27px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginCont{
+    color:#FFF112;
+    background-color:#000000;
+    font-size: 9px;
+}
+
+.registerCont{
+    background-color:#00000000;
+    font-size: 9.5px;
+}
+
+.formContainer{
+    background-color: #000000a6;
+    width: 25%;
+    min-width: 360px;
+    height: 40%;
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .loginForm{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 48px;
+  }
+  
+  .loginForm h1{
+    font-size: 18px;
+    margin-bottom: 18px;
+    font-weight: normal;
+  }
+
+  .loginForm input{
+    width: 250px;
+    font-size: 16px;
+    background-color: #ffffff00;
+    color: #ffffff;
+    font-weight: bold;
+    border: none; 
+    border-bottom: solid 0.5px #FFF112;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 24px;
+    margin-top: 5px;
+  }
+  
+  .loginForm input.input-error {
+    border-bottom: 2px solid red;
+  }
+  
+  .loginForm input::placeholder {
+    color: #ffffff; 
+    font-style: normal; 
+    font-weight: normal;
+  }
+  
+  .loginForm input:focus {
+    outline: none;
+  }
+
+  .loginButton {
+    position: absolute;
+    height: 36px;
+    width: 130px;
+    right: 35px;
+    bottom: 30px;
+    border-radius: 8px;
+    border: #00000000;
+    background-color: #FFF112;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  
+  .loginButton:hover {
+    background-color: #00000067;
+    border: solid 1px  #FFF112;
+    color: #FFF112;
+  }
