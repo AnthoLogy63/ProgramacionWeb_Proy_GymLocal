@@ -39,9 +39,9 @@
 }
 
 .registerCont{
-  color:#FFF112;
-  background-color:#000000;
-  font-size: 9px;
+color:#FFF112;
+background-color:#000000;
+font-size: 9px;
 }
 
 .formContainer{
@@ -87,6 +87,10 @@
   margin-top: 5px;
 }
 
+.registerForm input.input-error {
+  border-bottom: 2px solid red;
+}
+
 .registerForm input::placeholder {
   color: #ffffff; 
   font-style: normal; 
@@ -104,9 +108,16 @@
   right: 35px;
   bottom: 30px;
   border-radius: 8px;
+  border: #00000000;
   background-color: #FFF112;
   font-size: 16px;
   color: black;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.registerButton:hover {
+  background-color: #ffef1200;
+  border: solid 1px  #000000;
 }
