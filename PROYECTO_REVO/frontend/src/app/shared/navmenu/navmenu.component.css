@@ -39,8 +39,8 @@ header {
 
 /* Menú de navegación */
 .navmenu {
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: 30px;
 }
 
 .navmenu ul {
