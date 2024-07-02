@@ -1,9 +1,14 @@
-<nav class="w-full px-6 py-6 flex items-center justify-end bg-zinc-800 text-white border-b border-white/35">
-  <ul class="w-full max-w-lg flex gap-8 items-center justify-center font-bold">
-    <li><a [routerLink]="['/home']">Home</a></li>
-    <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">Login</a></li>
-    <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">Cerrar Sesión</a></li>
-    <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">Register</a></li>
-    <li><a routerLink="/espacios">Espacios</a></li>
-  </ul>
-</nav>  
+
+<header>
+  <div class="logo">
+    <img src="assets/logoindex.png" alt="Revo Logo">
+  </div>
+  <nav class="navmenu">
+    <ul>
+      <li><a [routerLink]="['/home']">home</a></li>
+      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">login</a></li>
+      <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">Cerrar Sesión</a></li>
+      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">register</a></li>
+    </ul>
+  </nav>
+</header>
