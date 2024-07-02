@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ApiAuthService } from '../../core/services/api-auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-espacios',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './espacios.component.html',
   styleUrl: './espacios.component.css'
 })
