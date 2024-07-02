@@ -77,7 +77,7 @@ header {
   }
 
   .navmenu ul li {
-      margin-left: 30rem; /* Espacio entre elementos de navegación */
+      margin-right: 3rem; /* Espacio entre elementos de navegación */
   }
 }
 /* Contenido principal */
