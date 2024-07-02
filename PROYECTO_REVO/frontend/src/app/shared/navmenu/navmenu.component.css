@@ -73,7 +73,7 @@ header {
 @media (min-width: 760px) {
     .navmenu ul {
       flex-direction: row;
-      justify-content: flex-start; /* Cambiado para alinear el contenido a la izquierda */
+      justify-content: space-around; /* Cambiado para alinear el contenido a la izquierda */
   }
 
   .navmenu ul li {
