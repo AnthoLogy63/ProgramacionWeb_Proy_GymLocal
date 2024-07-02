@@ -1,9 +1,10 @@
+
 .body-login{
     background-image: url('/assets/login-fondo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 93vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
