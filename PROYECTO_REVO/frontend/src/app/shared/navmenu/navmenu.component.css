@@ -6,7 +6,7 @@
   background-color: #33333300;
   color: rgb(0, 0, 0);
   text-align: center;
-  padding: 1em;
+  padding: 0.25rem;
   z-index: 1000; /* Asegúrate de que este valor sea mayor que el de otros elementos */
 }
 
@@ -20,7 +20,8 @@ body {
 
 /* Contenedor principal */
 .home-container {
-  text-align: center;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -30,6 +31,7 @@ header {
   align-items: center;
   padding: 10px 50px;
   background-color: #111;
+  
 }
 
 /* Logo */
@@ -39,34 +41,45 @@ header {
 
 /* Menú de navegación */
 .navmenu {
-  margin: auto;
-  padding: 30px;
+  margin-left: 1rem; /* Ajusta este valor según sea necesario */
 }
 
 .navmenu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navmenu ul li {
-  margin: 0 15px;
+  margin: 0 ;
 }
 
 .navmenu ul li a {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  text-transform: uppercase;
+  padding: 1rem;
 }
 
 .navmenu ul li a:hover {
-  color: #ffd700; /* Color amarillo */
+  background-color: #ffd700; /* Color amarillo */
 }
 
+@media (min-width: 760px) {
+    .navmenu ul {
+      flex-direction: row;
+      justify-content: flex-start; /* Cambiado para alinear el contenido a la izquierda */
+  }
+
+  .navmenu ul li {
+      margin-left: 30rem; /* Espacio entre elementos de navegación */
+  }
+}
 /* Contenido principal */
 .main-content {
   position: relative;
