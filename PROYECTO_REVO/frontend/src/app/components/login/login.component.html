@@ -1,22 +1,32 @@
-<div>
-  <h1>Iniciar Sesión</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="username">Nombre de usuario:</label>
-      <input id="username" formControlName="username" type="text">
-      <div *ngIf="isInvalidControl('username')" class="text-danger">
-        Nombre de usuario es requerido
+<div class="body-login">
+  <div class="formContainer">
+    <div class="register-login">
+      <div class="loginCont">
+        <h2>Iniciar Sesíon</h2>
+      </div>
+      <div class="registerCont">
+        <h2>Registrarse</h2>
       </div>
     </div>
-
-    <div>
-      <label for="password">Contraseña:</label>
-      <input id="password" formControlName="password" type="password">
-      <div *ngIf="isInvalidControl('password')" class="text-danger">
-        Contraseña es requerida
+    <form class="registerForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h1>ingrese su cuenta Revo</h1>
+      <div>
+        <label for="username">Nombre de usuario:</label>
+        <input id="username" formControlName="username" type="text">
+        <div *ngIf="isInvalidControl('username')" class="text-danger">
+          Nombre de usuario es requerido
+        </div>
       </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
-  </form>
-</div>
+  
+      <div>
+        <label for="password">Contraseña:</label>
+        <input id="password" formControlName="password" type="password">
+        <div *ngIf="isInvalidControl('password')" class="text-danger">
+          Contraseña es requerida
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+    </form>
+  </div>
+  </div>

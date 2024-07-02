@@ -1,4 +1,4 @@
-.body{
+.body-register{
   background-image: url('/assets/register-fondo.jpg');
   background-size: cover;
   background-position: center;
@@ -26,7 +26,7 @@
 .loginCont, .registerCont {
   border-radius: 5px;
   width: 47%;
-  height: 25px;
+  height: 27px;
   margin: 2px;
   display: flex;
   align-items: center;
@@ -71,7 +71,6 @@ font-size: 9px;
   margin-bottom: 18px;
   font-weight: normal;
 }
-
 
 .registerForm input{
   width: 250px;
