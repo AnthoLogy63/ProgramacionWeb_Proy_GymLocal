@@ -21,20 +21,10 @@ body {
     height: 50px;
   }
   
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    color: #F5E302; /* Color amarillo */
-  }
   
   .main-content {
     position: relative;
-    width: 100%;
+    width: 50%;
     height: 100vh;
     background: url('/assets/pechugonindex.png') no-repeat center center/cover;
   }
@@ -50,14 +40,18 @@ body {
   .text-overlay h1 {
     font-size: 4rem;
     margin: 0;
+    color: #fff;
   }
   
   .text-overlay .highlight {
     color: #F5E302; /* Color amarillo */
   }
+
+  
   
   .text-overlay p {
     font-size: 1.5rem;
     margin-top: 20px;
+    color: #fff;
   }
   

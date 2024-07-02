@@ -67,7 +67,7 @@ header {
 }
 
 .navmenu ul li a:hover {
-  background-color: #ffd700; /* Color amarillo */
+  background-color: #FFF112; /* Color amarillo */
 }
 
 @media (min-width: 760px) {
@@ -103,7 +103,7 @@ header {
 }
 
 .text-overlay .highlight {
-  color: #ffd700; /* Color amarillo */
+  color: #FFF112; /* Color amarillo */
 }
 
 .text-overlay p {
