@@ -25,8 +25,10 @@
 /* Superposición de texto */
 .text-overlay {
   flex: 1;
-  text-align: left;
+
+  text-align: center;
   color: #fff; /* Color blanco para el texto */
+  font-family: 'Permanent Marker', cursive;
 }
 
 .text-overlay h1 {
