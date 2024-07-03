@@ -1,5 +1,5 @@
 .navmenu {
-  position: fixed; /* O puedes usar position: absolute; */
+  position: absolute; /* O puedes usar position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
