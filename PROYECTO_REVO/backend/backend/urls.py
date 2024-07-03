@@ -5,6 +5,7 @@ from usuarios_app import views
 
 urlpatterns = [
     path('', include('usuarios_app.urls')),
+    path('api/', include('entrenamientos_app.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
