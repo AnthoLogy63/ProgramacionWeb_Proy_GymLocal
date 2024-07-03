@@ -1,7 +1,19 @@
 from rest_framework import serializers
-from .models import Entrenamiento
+from .models import DatosFisicos, Rutina, Coach
 
-class EntrenamientoSerializer(serializers.ModelSerializer):
+class DatosFisicosSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Entrenamiento
+        model = DatosFisicos
+        fields = '__all__'
+
+class RutinaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rutina
+        fields = '__all__'
+
+class CoachSerializer(serializers.ModelSerializer):
+    rutina = RutinaSerializer()
+
+    class Meta:
+        model = Coach
         fields = '__all__'
