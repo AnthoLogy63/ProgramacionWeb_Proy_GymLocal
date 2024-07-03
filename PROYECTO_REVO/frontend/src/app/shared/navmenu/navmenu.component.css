@@ -1,15 +1,3 @@
-.navmenu {
-  position: absolute; /* O puedes usar position: absolute; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #33333300;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding: 0.25rem;
-  z-index: 1000; /* Asegúrate de que este valor sea mayor que el de otros elementos */
-}
-
 /* Estilos generales */
 body {
   margin: 0;
@@ -18,20 +6,13 @@ body {
   color: #fff;
 }
 
-/* Contenedor principal */
-.home-container {
-  max-width: 120rem;
-  margin: 0 auto;
-}
-
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  background-color: #111;
-  
+  background-color: transparent;
 }
 
 /* Logo */
@@ -41,34 +22,39 @@ header {
 
 /* Menú de navegación */
 .navmenu {
-  margin-left: 1rem; /* Ajusta este valor según sea necesario */
+  margin: 0;
+  padding: 0;
 }
 
 .navmenu ul {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
+  list-style-type: none;
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navmenu ul li {
-  margin: 0 ;
+  margin: 0 15px;
 }
 
 .navmenu ul li a {
-  display: block;
-  text-align: center;
-  font-size: 2rem;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  padding: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
 }
 
 .navmenu ul li a:hover {
-  background-color: #FFF112; /* Color amarillo */
+  color: #FFF112; /* Color amarillo */
 }
+
+/*
+.navmenu ul li a:hover {
+  background-color: #FFF112; 
+} 
+*/
 
 @media (min-width: 760px) {
     .navmenu ul {
@@ -80,13 +66,7 @@ header {
       margin-right: 3rem; /* Espacio entre elementos de navegación */
   }
 }
-/* Contenido principal */
-.main-content {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url('/assets/indexfinal.jpg') no-repeat center center/cover;
-}
+
 
 /* Superposición de texto */
 .text-overlay {
