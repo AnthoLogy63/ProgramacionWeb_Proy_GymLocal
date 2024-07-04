@@ -10,6 +10,7 @@
       <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">Cerrar Sesión</a></li>
       <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">register</a></li>
       <li><a routerLink="/espacios">Espacios</a></li>
+      <li><a [routerLink]="['/viewLogin']">Perfil</a></li>
     </ul>
   </nav>
 </header>
