@@ -1,3 +1,6 @@
+
+
+
 /* Contenedor principal */
 .home-container {
   display: flex;
@@ -7,10 +10,13 @@
   height: 100vh;
   padding: 0;
   background-color: transparent; /* Fondo negro para el contraste */
+  box-sizing: border-box;
 }
+
 
 /* Contenedor de la imagen */
 .image-container {
+  width: 100%;
   flex: 1;
   display: flex;
   justify-content: left;
@@ -18,23 +24,32 @@
 }
 
 .image-container img {
-  max-width: 80%; /* Ajustar el tamaño de la imagen */
+  max-width: 100%; /* Ajustar el tamaño de la imagen */
   height: auto;
 }
 
+.highlight{
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 /* Superposición de texto */
 .text-overlay {
   flex: 1;
-
   text-align: center;
   color: #fff; /* Color blanco para el texto */
   font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .text-overlay h1 {
   font-size: 4rem;
   margin: 0;
   text-transform: uppercase;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .text-overlay .highlight {
@@ -45,4 +60,7 @@
   font-size: 1.5rem;
   margin-top: 20px;
   text-transform: uppercase;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
