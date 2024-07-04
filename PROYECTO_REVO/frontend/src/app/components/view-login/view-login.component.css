@@ -1,0 +1,33 @@
+.body-viewLogin{
+    background-image: url('/assets/fondo_perfil.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.perfilContainer {
+    min-width: 390px;
+    min-height: 470px;
+    background-color: #454545a6;
+    width: 30%;
+    max-height: 600px;
+    height: 540px;
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.avatar{
+    height: 130px;
+    width: 130px;
+    background-color: #effa4a;
+    border-radius: 50%;
+}
