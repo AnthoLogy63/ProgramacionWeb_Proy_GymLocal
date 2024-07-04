@@ -1,10 +1,15 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Entrenamiento
-from .serializers import EntrenamientoSerializer
+from .models import DatosFisicos, Rutina, Coach
+from .serializers import DatosFisicosSerializer, RutinaSerializer, CoachSerializer
 
-# Create your views here.
+class DatosFisicosViewSet(viewsets.ModelViewSet):
+    queryset = DatosFisicos.objects.all()
+    serializer_class = DatosFisicosSerializer
 
-class EntrenamientoViewSet(viewsets.ModelViewSet):
-    queryset = Entrenamiento.objects.all()
-    serializer_class = EntrenamientoSerializer
+class RutinaViewSet(viewsets.ModelViewSet):
+    queryset = Rutina.objects.all()
+    serializer_class = RutinaSerializer
+
+class CoachViewSet(viewsets.ModelViewSet):
+    queryset = Coach.objects.all()
+    serializer_class = CoachSerializer

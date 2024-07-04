@@ -30,17 +30,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 11px;
 }
 
 .loginCont{
     color:#FFF112;
     background-color:#000000;
-    font-size: 9px;
 }
 
 .registerCont{
-    background-color:#00000000;
-    font-size: 9.5px;
+    background-color:#29282800;
 }
 
 .formContainer{
@@ -48,6 +47,7 @@
     width: 25%;
     min-width: 360px;
     height: 40%;
+    min-height: 330px;
     position: relative;
     border-radius: 15px;
     display: flex;
@@ -104,7 +104,7 @@
     height: 36px;
     width: 130px;
     right: 35px;
-    bottom: 30px;
+    bottom: 35px;
     border-radius: 8px;
     border: #00000000;
     background-color: #FFF112;
