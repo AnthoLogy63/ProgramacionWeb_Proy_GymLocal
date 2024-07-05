@@ -110,7 +110,16 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
     # add other origins if needed
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:4200',  # Añade la URL de tu frontend
+]
 CORS_ALLOW_CREDENTIALS = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
