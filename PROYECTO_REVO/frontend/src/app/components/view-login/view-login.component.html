@@ -1,27 +1,28 @@
-<div class="body-viewLogin">
+<div class="body-viewLogin" *ngIf="userData$ | async as userData">
     <div class="perfilContainer">
-        <div class="avatar"></div>
-        <div class="informacion">
-            <div class="sectionInfo">
-                <div class="indicador"><p>Nombre Completo:</p></div>
-                <div class="datos"><p id="nombreCompleto"></p></div>
-            </div>
-
-            <div class="sectionInfo">
-                <div class="indicador"><p>Usuario:</p></div>
-                <div class="datos"><p id="usuario"></p></div>
-            </div>
-
-            <div class="sectionInfo">
-                <div class="indicador"><p>Fecha de registro:</p></div>
-                <div class="datos"><p id="fechaDeRegistro"></p></div>
-            </div>
-
-            <div class="sectionInfo">
-                <div class="indicador"><p>Planes Actuales:</p></div>
-                <div class="datos"><p id="planesActuales"></p></div>
-            </div>
-            <button class="editarButton">Editar Perfil</button>
+      <div class="avatar">
+        <img [src]="userData.avatar" alt="Avatar">
+      </div>
+      <div class="informacion">
+        <div class="sectionInfo">
+          <div class="indicador"><p>Nombre Completo:</p></div>
+          <div class="datos"><p id="nombreCompleto">{{ userData.first_name }} {{ userData.last_name }}</p></div>
         </div>
+  
+        <div class="sectionInfo">
+          <div class="indicador"><p>Usuario:</p></div>
+          <div class="datos"><p id="usuario">{{ userData.username }}</p></div>
+        </div>
+  
+        <div class="sectionInfo">
+          <div class="indicador"><p>Correo Electrónico:</p></div>
+          <div class="datos"><p id="correo">{{ userData.email }}</p></div>
+        </div>
+  
+        <div class="sectionInfo">
+          <div class="indicador"><p>Planes Actuales:</p></div>
+          <div class="datos"><p id="planesActuales">{{ userData.membership_active ? 'Activo' : 'Inactivo' }}</p></div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>

@@ -11,6 +11,7 @@ export class ApiAuthService {
 
   constructor(private http: HttpClient) { }
 
+  //Métodos para determinar el logueo del usuario
   login(username: string, password: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login/`, { username, password });
   }
@@ -33,5 +34,11 @@ export class ApiAuthService {
   }
   clearCurrentUser(): void {
     this.currentUser = null;
+  }
+
+
+  //Obtener la info del usuario
+  getUserData(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/dataUser/`, { withCredentials: true });
   }
 }
