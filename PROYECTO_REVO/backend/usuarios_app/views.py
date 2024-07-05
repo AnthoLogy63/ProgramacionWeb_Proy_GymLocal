@@ -1,6 +1,8 @@
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 from rest_framework.decorators import api_view
+from django.contrib.auth.decorators import login_required
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -30,6 +32,18 @@ class UserCreate(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
-            # Print errors to the console for debugging
             print(serializer.errors)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+@login_required
+def getDataUser(request):
+    user = request.user
+    data = {
+        'username': user.username,
+        'email': user.email,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'membership_active': user.membership_active,
+        'avatar': user.avatar.url if user.avatar else None
+    }
+    return JsonResponse(data)

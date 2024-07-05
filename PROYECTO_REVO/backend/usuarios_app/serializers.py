@@ -18,3 +18,4 @@ class UserSerializer(serializers.ModelSerializer):
             avatar=validated_data.get('avatar')
         )
         return user
+    
