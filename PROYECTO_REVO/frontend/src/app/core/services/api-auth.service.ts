@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,8 +11,25 @@ export class ApiAuthService {
 
   constructor(private http: HttpClient) { }
 
+  //Métodos para determinar el logueo del usuario
+  private getCSRFHeaders(): HttpHeaders {
+    const csrfToken = this.getCookie('csrftoken');
+    return new HttpHeaders({ 'X-CSRFToken': csrfToken });
+  }
+
+  private getCookie(name: string): string {
+    const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return cookieValue ? cookieValue.pop() || '' : '';
+  }
+
   login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login/`, { username, password });
+    const loginData = { username, password };
+    const httpOptions = {
+      headers: this.getCSRFHeaders(),
+      withCredentials: true
+    };
+  
+    return this.http.post<any>(`${this.apiUrl}/login/`, loginData, httpOptions);
   }
 
   logout(): Observable<any> {
@@ -33,5 +50,11 @@ export class ApiAuthService {
   }
   clearCurrentUser(): void {
     this.currentUser = null;
+  }
+
+
+  //Obtener la info del usuario
+  getUserData(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/dataUser/`, { withCredentials: true });
   }
 }
