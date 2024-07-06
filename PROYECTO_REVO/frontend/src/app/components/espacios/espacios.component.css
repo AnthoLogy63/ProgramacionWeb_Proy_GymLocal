@@ -10,10 +10,10 @@
   }
   
   .content {
-    max-width: 64rem; /* max-w-4xl */
+    max-width: 128rem; /* max-w-4xl */
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* grid-cols-2 */
-    gap: 2rem; /* gap-8 */
+    gap: 4rem; /* gap-8 */
   }
   
   .local {
@@ -50,9 +50,5 @@
   
   .local-info p:last-of-type {
     font-size: 0.875rem; /* text-sm */
-  }
-  
-  .local-image {
-    width: 20rem; /* w-80 */
   }
   

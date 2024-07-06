@@ -1,18 +1,17 @@
 <div class="container">
   <div class="content">
-    @for (local of locales; track $index) {
-      <div class="local">
-        <div class="local-info">
-          <h2>{{ local.sede }}</h2>
-          <p>{{ local.direccion }}</p>
-          <p>{{ local.referencia }}</p>
-        </div>
-        <img
-          src="https://res.cloudinary.com/dazt6g3o1/image/upload/v1719926229/ni8d6f6pg4sp3vuka5lr.png"
-          alt="sede"
-          class="local-image"
-        >
+    <div *ngFor="let local of locales; let i = index" class="local">
+      <div class="local-info">
+        <h2>{{ local.sede }}</h2>
+        <p>{{ local.direccion }}</p>
+        <p>{{ local.referencia }}</p>
       </div>
-    }
+      <iframe
+        [src]="getGoogleMapUrl(local)"
+        width="600" height="400"
+        style="border: 5px solid #facc15; border-radius: 30px;"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </div>
 </div>
