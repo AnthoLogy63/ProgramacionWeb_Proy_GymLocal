@@ -13,6 +13,7 @@ header {
   align-items: center;
   padding: 10px 50px;
   background-color: transparent;
+  border-bottom: 1px solid #686868;
 }
 
 /* Logo */
@@ -63,7 +64,7 @@ header {
   }
 
   .navmenu ul li {
-      margin-right: 3rem; /* Espacio entre elementos de navegación */
+      margin-right: 4rem; /* Espacio entre elementos de navegación */
   }
 }
 
