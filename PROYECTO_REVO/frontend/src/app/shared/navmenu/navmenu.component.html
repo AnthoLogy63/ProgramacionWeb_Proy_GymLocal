@@ -11,6 +11,7 @@
       <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">register</a></li>
       <li><a routerLink="/espacios">Espacios</a></li>
       <li *ngIf="isLoggedIn()"><a [routerLink]="['/viewLogin']">Perfil</a></li>
+      <li *ngIf="isLoggedIn()"><a [routerLink]="['/rutinas']">Rutinas</a></li>
     </ul>
   </nav>
 </header>
