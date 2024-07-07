@@ -28,16 +28,17 @@ def get_datos_fisicos(request, user_id):
 @api_view(['GET'])
 def get_rutinas(request, user_id):
     user = User.objects.get(id=user_id)
-    rutinas = Rutina.objects.filter(usuario=user)
+    rutinas = Rutina.objects.filter(coach__usuarios=user)
     serializer = RutinaSerializer(rutinas, many=True)
     return JsonResponse(serializer.data, safe=False)
 
 @api_view(['GET'])
 def get_coaches(request, user_id):
     user = User.objects.get(id=user_id)
-    coaches = Coach.objects.filter(usuario=user)
+    coaches = Coach.objects.filter(usuarios=user)
     serializer = CoachSerializer(coaches, many=True)
     return JsonResponse(serializer.data, safe=False)
+
 @login_required
 def get_user_id(request):
     user = request.user
