@@ -30,7 +30,6 @@ export class NavmenuComponent {
       response => {
         if (response) {
           console.log('Logout successful', response);
-          this.apiAuthService.clearCurrentUser();
           this.router.navigate(['/login']); 
         } else {
           console.error('Logout response was null or undefined');

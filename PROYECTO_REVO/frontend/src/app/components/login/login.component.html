@@ -10,23 +10,25 @@
     </div>
     <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <h1>Ingrese su cuenta Revo</h1>
-        <input 
-          id="username" 
-          formControlName="username" 
-          type="text" 
-          [placeholder]="'Nombre de usuario' + (loginForm.controls['username'].invalid && loginForm.controls['username'].touched ? ' *' : '')"
-          [ngClass]="{'input-error': loginForm.controls['username'].invalid && loginForm.controls['username'].touched}"
-        >
-
-        <input 
-          id="password" 
-          formControlName="password" 
-          type="password"
-          [placeholder]="'Contraseña' + (loginForm.controls['password'].invalid && loginForm.controls['password'].touched ? ' *' : '')"
-          [ngClass]="{'input-error': loginForm.controls['password'].invalid && loginForm.controls['password'].touched}"
-        >
-
+      <input 
+        id="username" 
+        formControlName="username" 
+        type="text" 
+        [placeholder]="'Nombre de usuario' + (loginForm.controls['username'].invalid && loginForm.controls['username'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': loginForm.controls['username'].invalid && loginForm.controls['username'].touched}"
+      >
+      <input 
+        id="password" 
+        formControlName="password" 
+        type="password"
+        [placeholder]="'Contraseña' + (loginForm.controls['password'].invalid && loginForm.controls['password'].touched ? ' *' : '')"
+        [ngClass]="{'input-error': loginForm.controls['password'].invalid && loginForm.controls['password'].touched}"
+      >
       <button class="loginButton" type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
     </form>
+    <p>Si aún no eres cliente de Revo, <a [routerLink]="['/register']">Registrate</a></p>
   </div>
 </div>

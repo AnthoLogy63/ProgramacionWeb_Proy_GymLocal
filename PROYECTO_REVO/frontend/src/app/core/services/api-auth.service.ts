@@ -40,19 +40,6 @@ export class ApiAuthService {
     return !!this.currentUser;
   }
 
-
-  //Métodos para guardar el nombre del usuario
-  setCurrentUser(username: string): void {
-    this.currentUser = username;
-  }
-  getCurrentUser(): string | null {
-    return this.currentUser;
-  }
-  clearCurrentUser(): void {
-    this.currentUser = null;
-  }
-
-
   //Obtener la info del usuario
   getUserData(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/dataUser/`, { withCredentials: true });
