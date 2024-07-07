@@ -5,6 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from usuarios_app.models import User
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 class DatosFisicosViewSet(viewsets.ModelViewSet):
     queryset = DatosFisicos.objects.all()
@@ -46,3 +49,28 @@ def get_user_id(request):
         'user_id': user.id
     }
     return JsonResponse(data)
+
+def render_to_pdf(template_src, context_dict):
+    template = get_template(template_src)
+    html = template.render(context_dict)
+    result = HttpResponse(content_type='application/pdf')
+    pisa_status = pisa.CreatePDF(html, dest=result)
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return result
+
+@login_required
+def download_training_pdf(request):
+    user = request.user
+    datos_fisicos = DatosFisicos.objects.filter(usuario=user).first()
+    rutinas = Rutina.objects.filter(coach__usuarios=user)
+    coaches = Coach.objects.filter(usuarios=user)
+
+    context = {
+        'datos_fisicos': datos_fisicos,
+        'rutinas': rutinas,
+        'coaches': coaches,
+        'user': user
+    }
+
+    return render_to_pdf('training_pdf_template.html', context)
