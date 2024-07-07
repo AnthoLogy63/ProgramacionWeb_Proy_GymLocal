@@ -1,0 +1,60 @@
+<div class="body-viewLogin" *ngIf="datosFisicos.length > 0">
+  <div class="datosFisicosContainer" *ngFor="let dato of datosFisicos">
+    <div class="sectionInfo">
+      <div class="indicador"><p>Edad:</p></div>
+      <div class="datos"><p id="edad">{{ dato.edad }}</p></div>
+    </div>
+    <div class="sectionInfo">
+      <div class="indicador"><p>Peso:</p></div>
+      <div class="datos"><p id="peso">{{ dato.peso }}</p></div>
+    </div>
+    <div class="sectionInfo">
+      <div class="indicador"><p>Talla:</p></div>
+      <div class="datos"><p id="talla">{{ dato.talla }}</p></div>
+    </div>
+    <div class="sectionInfo">
+      <div class="indicador"><p>IMC:</p></div>
+      <div class="datos"><p id="imc">{{ dato.imc }}</p></div>
+    </div>
+    <div class="sectionInfo">
+      <div class="indicador"><p>Masa Muscular:</p></div>
+      <div class="datos"><p id="masaMuscular">{{ dato.masa_muscular }}</p></div>
+    </div>
+    <div class="sectionInfo">
+      <div class="indicador"><p>Recomendaciones:</p></div>
+      <div class="datos"><p id="recomendaciones">{{ dato.recomendaciones }}</p></div>
+      <button (click)="downloadPdf()">Descargar PDF</button>
+      <button (click)="sendPdf()">Enviar PDF por Correo</button>
+    </div>
+  </div>
+</div>
+<div class="body-viewLogin" *ngIf="rutinas.length > 0">
+  <div class="rutinasContainer" *ngFor="let rutina of rutinas">
+    <div class="sectionInfo">
+      <div class="indicador"><p>Nombre:</p></div>
+      <div class="datos"><p id="nombre_ejercicio">{{ rutina.nombre_ejercicio }}</p></div>
+    </div>
+    <div class="sectionInfo">
+      <div class="indicador"><p>Número de repeticiones:</p></div>
+      <div class="datos"><p id="numero_repeticiones">{{ rutina.numero_repeticiones}}</p></div>
+    </div>
+    <div class="sectionInfo">
+      <div class="indicador"><p>Día:</p></div>
+      <div class="datos"><p id="dia">{{ rutina.dia}}</p></div>
+    </div>
+    
+    <div class="sectionInfo">
+      <div class="indicador"><p>Músculo a ejercitar:</p></div>
+      <div class="datos"><p id="musculo_ejercita">{{ rutina.musculo_ejercitar }}</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="body-viewLogin" *ngIf="coaches.length > 0">
+  <div class="coachesContainer" *ngFor="let coach of coaches">
+    <div class="sectionInfo">
+      <div class="indicador"><p>Nombre:</p></div>
+      <div class="datos"><p id="nombre">{{ coach.nombre }}</p></div>
+    </div>
+  </div>
+</div>
