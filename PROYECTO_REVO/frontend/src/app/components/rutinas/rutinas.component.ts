@@ -18,6 +18,14 @@ export class RutinasComponent implements OnInit {
   usuario: string = "";
   constructor(private apiService: ApiAuthService ) { }
 
+  sendPdf() {
+    this.apiService.sendTrainingPdf().subscribe(response => {
+      alert('PDF enviado por correo exitosamente');
+    }, error => {
+      alert('Error al enviar el PDF por correo');
+    });
+  }
+
   downloadPdf() {
     this.apiService.downloadTrainingPdf().subscribe(response => {
       const url = window.URL.createObjectURL(response);

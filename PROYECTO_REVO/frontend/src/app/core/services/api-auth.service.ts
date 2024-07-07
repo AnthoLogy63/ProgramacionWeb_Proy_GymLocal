@@ -74,4 +74,9 @@ export class ApiAuthService {
   downloadTrainingPdf() {
     return this.http.get(`${this.apiUrl}/download_training_pdf/`, { responseType: 'blob', withCredentials: true });
   }
+
+  //Método para enviar pdf
+  sendTrainingPdf() {
+    return this.http.get(`${this.apiUrl}/send_training_pdf/`, { withCredentials: true });
+  }
 }
