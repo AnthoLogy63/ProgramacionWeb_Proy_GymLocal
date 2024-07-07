@@ -69,4 +69,9 @@ export class ApiAuthService {
   getDatosCoaches(userId: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/coaches/${userId}/`, { withCredentials: true })
   }
+
+  //Método para descargar pdf
+  downloadTrainingPdf() {
+    return this.http.get(`${this.apiUrl}/download_training_pdf/`, { responseType: 'blob', withCredentials: true });
+  }
 }

@@ -18,6 +18,18 @@ export class RutinasComponent implements OnInit {
   usuario: string = "";
   constructor(private apiService: ApiAuthService ) { }
 
+  downloadPdf() {
+    this.apiService.downloadTrainingPdf().subscribe(response => {
+      const url = window.URL.createObjectURL(response);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'training.pdf';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    });
+  }
+  
   ngOnInit() {
     this.apiService.getUserId().subscribe(userIdData => {
       this.userId = userIdData.user_id;
