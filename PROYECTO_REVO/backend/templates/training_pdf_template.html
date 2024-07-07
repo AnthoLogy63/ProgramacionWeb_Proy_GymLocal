@@ -1,0 +1,28 @@
+<html>
+<body>
+    <h1>Datos Físicos</h1>
+    <p>Edad: {{ datos_fisicos.edad }}</p>
+    <p>Peso: {{ datos_fisicos.peso }}</p>
+    <p>Talla: {{ datos_fisicos.talla }}</p>
+    <p>IMC: {{ datos_fisicos.imc }}</p>
+    <p>Masa Muscular: {{ datos_fisicos.masa_muscular }}</p>
+    <p>Recomendaciones: {{ datos_fisicos.recomendaciones }}</p>
+
+    <h1>Rutinas</h1>
+    {% for rutina in rutinas %}
+    <div>
+        <p>Nombre del ejercicio: {{ rutina.nombre_ejercicio }}</p>
+        <p>Número de repeticiones: {{ rutina.numero_repeticiones }}</p>
+        <p>Día: {{ rutina.dia }}</p>
+        <p>Músculo a ejercitar: {{ rutina.musculo_ejercitar }}</p>
+    </div>
+    {% endfor %}
+
+    <h1>Coaches</h1>
+    {% for coach in coaches %}
+    <div>
+        <p>Nombre: {{ coach.nombre }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
