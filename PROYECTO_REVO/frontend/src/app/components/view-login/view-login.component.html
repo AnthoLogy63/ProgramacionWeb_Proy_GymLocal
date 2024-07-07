@@ -1,6 +1,6 @@
 <div class="body-viewLogin" *ngIf="userData$ | async as userData">
   <div class="perfilContainer">
-    <div class="avatar" [style.background-image]="'url(' + userData.avatar + ')'" alt="Avatar"></div>
+    <div class="avatar" [style.background-image]="'url(' + userData.avatar + ')'" [attr.alt]="'Avatar ' + userData.username"></div>
     <div class="informacion">
       <div class="sectionInfo">
         <div class="indicador"><p>Nombre Completo:</p></div>
