@@ -5,12 +5,12 @@
   </div>
   <nav class="navmenu">
     <ul>
-      <li><a [routerLink]="['/home']">home</a></li>
-      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">login</a></li>
-      <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">Cerrar Sesión</a></li>
-      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">register</a></li>
-      <li><a routerLink="/espacios">Espacios</a></li>
-      <li *ngIf="isLoggedIn()"><a [routerLink]="['/viewLogin']">Perfil</a></li>
+      <li><a [routerLink]="['/home']">HOME</a></li>
+      <li><a routerLink="/espacios">ESPACIOS</a></li>
+      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">LOGIN</a></li>
+      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">REGISTER</a></li>
+      <li *ngIf="isLoggedIn()"><a [routerLink]="['/viewLogin']">PERFIL</a></li>
+      <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">CERRAR SESIÓN</a></li>
     </ul>
   </nav>
 </header>
