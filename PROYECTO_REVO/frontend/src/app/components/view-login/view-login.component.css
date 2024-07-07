@@ -32,12 +32,14 @@
     flex-direction: column;
 }
 
-.avatar{
+.avatar {
     height: 130px;
     width: 130px;
     background-color: #effa4a;
     border-radius: 50%;
-}
+    background-size: cover; 
+    background-position: center;
+  }
 
 .sectionInfo { 
     height: 45px;
