@@ -57,4 +57,10 @@ export class ApiAuthService {
   getUserData(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/dataUser/`, { withCredentials: true });
   }
+  getUserId(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/user_id/`, { withCredentials: true });
+  }
+  getDatosFisicos(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/datos_fisicos/${userId}/`, { withCredentials: true });
+  }
 }
