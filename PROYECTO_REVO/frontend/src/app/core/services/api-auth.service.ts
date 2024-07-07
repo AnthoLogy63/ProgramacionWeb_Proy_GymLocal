@@ -57,4 +57,26 @@ export class ApiAuthService {
   getUserData(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/dataUser/`, { withCredentials: true });
   }
+  getUserId(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/user_id/`, { withCredentials: true });
+  }
+  getDatosFisicos(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/datos_fisicos/${userId}/`, { withCredentials: true });
+  }
+  getDatosRutina(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/rutinas/${userId}/`, { withCredentials: true })
+  }
+  getDatosCoaches(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/coaches/${userId}/`, { withCredentials: true })
+  }
+
+  //Método para descargar pdf
+  downloadTrainingPdf() {
+    return this.http.get(`${this.apiUrl}/download_training_pdf/`, { responseType: 'blob', withCredentials: true });
+  }
+
+  //Método para enviar pdf
+  sendTrainingPdf() {
+    return this.http.get(`${this.apiUrl}/send_training_pdf/`, { withCredentials: true });
+  }
 }
