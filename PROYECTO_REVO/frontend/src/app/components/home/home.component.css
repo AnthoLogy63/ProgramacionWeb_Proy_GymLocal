@@ -102,3 +102,65 @@
     z-index: 1;
   }
 }
+
+
+
+/*sobre nosotros*/
+.about-us-section {
+  padding: 50px 20px;
+  background-color: #222; /* Fondo oscuro */
+}
+
+.about-us-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-us-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 80%;
+
+}
+
+.about-us-text {
+  flex: 1;
+  color: #fff;
+  padding: 20px;
+}
+
+.about-us-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .about-us-container {
+    flex-direction: column;
+  }
+
+  .about-us-image,
+  .about-us-text {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .about-us-text {
+    padding: 20px 0;
+    text-align: center;
+  }
+}
