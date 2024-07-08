@@ -164,3 +164,157 @@
     text-align: center;
   }
 }
+
+/* Estilos para la sección Sobre Nosotros */
+.about-us-section {
+  padding: 50px 20px;
+  background-color: #222; /* Fondo oscuro */
+}
+
+.about-us-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-us-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-us-text {
+  flex: 1;
+  color: #fff;
+  padding: 20px;
+}
+
+.about-us-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .about-us-container {
+    flex-direction: column;
+  }
+
+  .about-us-image,
+  .about-us-text {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .about-us-text {
+    padding: 20px 0;
+    text-align: center;
+  }
+}
+
+/* Estilos para la sección de testimonios */
+.testimonials-section {
+  padding: 50px 20px;
+  background-color: #111; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-content {
+  max-width: 800px;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.testimonial-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.testimonial-text p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-author h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.testimonial-author p {
+  font-size: 1rem;
+  margin: 5px 0 10px;
+}
+
+.testimonial-rating {
+  font-size: 1.5rem;
+  color: #ffd700; /* Color amarillo para las estrellas */
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav-button:focus {
+  outline: none;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .testimonial-content {
+    margin: 0 10px;
+  }
+
+  .testimonial-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .testimonial-text p {
+    font-size: 1.2rem;
+  }
+
+  .testimonial-author h3 {
+    font-size: 1.2rem;
+  }
+
+  .testimonial-author p {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-rating {
+    font-size: 1.2rem;
+  }
+}
+
+
+
