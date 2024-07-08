@@ -9,9 +9,4 @@ import { ApiAuthService } from '../../core/services/api-auth.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  currentUser: string | null;
-
-  constructor(private apiAuthService: ApiAuthService) {
-    this.currentUser = this.apiAuthService.getCurrentUser();
-  }
 }

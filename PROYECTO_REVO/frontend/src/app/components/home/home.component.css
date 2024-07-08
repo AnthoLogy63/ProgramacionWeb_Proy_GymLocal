@@ -56,11 +56,15 @@
 }
 
 .text-overlay .highlight {
+<<<<<<< HEAD
+  color: #ffd700; 
+=======
 
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
   font-style: normal;
   color: #FFF112; 
+>>>>>>> 7ea7510440700a146901f2177c456536b76e7e87
 }
 
 .text-overlay p {

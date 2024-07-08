@@ -48,7 +48,7 @@
   width: 25%;
   min-width: 360px;
   min-height: 520px;
-  height: 530px;
+  height: 570px;
   max-height: 600px;
   position: relative;
   border-radius: 15px;
@@ -83,7 +83,7 @@
   border-bottom: solid 0.5px #FFF112;
   padding-left: 15px;
   padding-bottom: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   margin-top: 5px;
 }
 
@@ -105,8 +105,8 @@
   position: absolute;
   height: 36px;
   width: 130px;
-  right: 35px;
-  bottom: 35px;
+  right: 55px;
+  bottom: 70px;
   border-radius: 8px;
   border: #00000000;
   background-color: #FFF112;
@@ -121,4 +121,37 @@
   background-color: #00000067;
   border: solid 1px  #FFF112;
   color: #FFF112;
+}
+
+.formContainer p {
+  color: #ffffff;
+  font-size: 13.5px;
+  align-self: center;
+}
+
+.formContainer a {
+  color:#FFF112;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.formContainer a:hover {
+  color:#ff8c00;
+  font-weight: bold;
+}
+
+.form-group {
+  position: relative;
+}
+
+.error-message {
+  position: absolute;
+  top: 0;
+  opacity: 90%;
+  right: -180px; 
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px; 
+  z-index: 1000;
 }
