@@ -66,4 +66,15 @@ export class ApiAuthService {
   sendTrainingPdf() {
     return this.http.get(`${this.apiUrl}/send_training_pdf/`, { withCredentials: true });
   }
+
+
+  setCurrentUser(username: string): void {
+    this.currentUser = username;
+  }
+  getCurrentUser(): string | null {
+    return this.currentUser;
+  }
+  clearCurrentUser(): void {
+    this.currentUser = null;
+  }
 }
