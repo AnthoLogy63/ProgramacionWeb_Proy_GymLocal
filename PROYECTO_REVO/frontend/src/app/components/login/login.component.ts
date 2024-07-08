@@ -44,6 +44,7 @@ export class LoginComponent {
         response => {
           if (response) {
             console.log('Login successful', response);
+            this.apiAuthService.setCurrentUser(username);
             this.router.navigate(['/home']);
           }
         },
