@@ -41,6 +41,7 @@ header {
 
 .navmenu ul li a {
   color: #fff;
+  
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
@@ -91,3 +92,9 @@ header {
   font-size: 1.5rem;
   margin-top: 20px;
 }
+
+
+
+
+/*-----------------------*/
+
