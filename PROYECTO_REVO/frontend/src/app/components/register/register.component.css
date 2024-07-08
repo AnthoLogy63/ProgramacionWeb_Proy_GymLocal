@@ -80,7 +80,7 @@
   color: #ffffff;
   font-weight: bold;
   border: none; 
-  border-bottom: solid 0.5px #FFF112;
+  border-bottom: solid 1px #FFF112;
   padding-left: 15px;
   padding-bottom: 5px;
   margin-bottom: 25px;
@@ -88,7 +88,7 @@
 }
 
 .registerForm input.input-error {
-  border-bottom: 2px solid red;
+  border-bottom: 1px solid red;
 }
 
 .registerForm input::placeholder {
@@ -99,6 +99,7 @@
 
 .registerForm input:focus {
   outline: none;
+  border-bottom: 1px solid #ff7700;
 }
 
 .registerButton {
