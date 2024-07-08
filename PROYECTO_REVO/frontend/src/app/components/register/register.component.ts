@@ -30,6 +30,7 @@ export class RegisterComponent {
       last_name: ['', Validators.required],
     });
   }
+  
 
   onSubmit(): void {
     if (this.registerForm.valid) {
@@ -54,6 +55,26 @@ export class RegisterComponent {
           }
         });
     }
+  }
+
+
+  isInvalidControl(controlName: string): boolean {
+    const control = this.registerForm.get(controlName);
+    return !!(control && control.invalid && control.touched);
+  }
+
+  getErrorMessage(controlName: string): string | null {
+    const control = this.registerForm.get(controlName);
+  
+    if (control?.errors) {
+      if (control.errors['required']) {
+        return 'Este campo es requerido.';
+      } else if (control.errors['email']) {
+        return 'Correo electrónico inválido.';
+      }
+    }
+  
+    return null;
   }
 
   passwordsMatch(): boolean {

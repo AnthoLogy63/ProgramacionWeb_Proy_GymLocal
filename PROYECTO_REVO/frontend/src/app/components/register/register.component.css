@@ -129,7 +129,6 @@
   align-self: center;
 }
 
-
 .formContainer a {
   color:#FFF112;
   font-weight: bold;
@@ -139,4 +138,20 @@
 .formContainer a:hover {
   color:#ff8c00;
   font-weight: bold;
+}
+
+.form-group {
+  position: relative;
+}
+
+.error-message {
+  position: absolute;
+  top: 0;
+  opacity: 90%;
+  right: -180px; 
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px; 
+  z-index: 1000;
 }
