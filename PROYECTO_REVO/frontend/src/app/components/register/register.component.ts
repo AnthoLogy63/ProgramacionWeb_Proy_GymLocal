@@ -30,7 +30,6 @@ export class RegisterComponent {
       last_name: ['', Validators.required],
     });
   }
-  
 
   onSubmit(): void {
     if (this.registerForm.valid) {
@@ -72,6 +71,7 @@ export class RegisterComponent {
       } else if (control.errors['email']) {
         return 'Correo electrónico inválido.';
       }
+      // Añade más validaciones según tus necesidades
     }
   
     return null;
