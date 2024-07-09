@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiAuthService {
   private apiUrl = 'http://localhost:8000/api';
-  private currentUser: string | null = null;
+  private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
@@ -22,22 +23,34 @@ export class ApiAuthService {
     return cookieValue ? cookieValue.pop() || '' : '';
   }
 
-  login(username: string, password: string): Observable<any> {
-    const loginData = { username, password };
-    const httpOptions = {
-      headers: this.getCSRFHeaders(),
-      withCredentials: true
-    };
-  
-    return this.http.post<any>(`${this.apiUrl}/login/`, loginData, httpOptions);
+  //Método para establecer Login
+  login(credentials: { username: string, password: string }): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login/`, credentials, { headers: this.getCSRFHeaders(), withCredentials: true }).pipe(
+      tap(response => {
+        if (response) {
+          localStorage.setItem('currentUser', JSON.stringify(response));
+          this.isLoggedInSubject.next(true);
+        }
+      })
+    );
   }
 
   logout(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/logout/`, {});
+    return this.http.post(`${this.apiUrl}/logout/`, {}, { headers: this.getCSRFHeaders(), withCredentials: true }).pipe(
+      tap(() => {
+        localStorage.removeItem('currentUser');
+        this.isLoggedInSubject.next(false);
+      })
+    );
   }
 
-  isLoggedIn(): boolean {
-    return !!this.currentUser;
+  isLoggedIn(): Observable<boolean> {
+    return this.isLoggedInSubject.asObservable();
+  }
+
+  getCurrentUser(): any {
+    const user = localStorage.getItem('currentUser');
+    return user ? JSON.parse(user) : null;
   }
 
   //Obtener la info del usuario
@@ -57,24 +70,12 @@ export class ApiAuthService {
     return this.http.get<any>(`${this.apiUrl}/coaches/${userId}/`, { withCredentials: true })
   }
 
-  //Método para descargar pdf
+  //Método para enviar y descargar pdf
   downloadTrainingPdf() {
     return this.http.get(`${this.apiUrl}/download_training_pdf/`, { responseType: 'blob', withCredentials: true });
   }
 
-  //Método para enviar pdf
   sendTrainingPdf() {
     return this.http.get(`${this.apiUrl}/send_training_pdf/`, { withCredentials: true });
-  }
-
-
-  setCurrentUser(username: string): void {
-    this.currentUser = username;
-  }
-  getCurrentUser(): string | null {
-    return this.currentUser;
-  }
-  clearCurrentUser(): void {
-    this.currentUser = null;
   }
 }
