@@ -23,7 +23,7 @@ export class EspaciosComponent {
       sede: 'SEDE CERRO COLORADO',
       direccion: 'CA. MIGUEL GRAU 110',
       referencia: '(CERCA A PLAZA LAS AMERICAS)',
-      mapaUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.3939991315037!2d-71.52971332396702!3d-16.404804338283615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424aff97f582b3%3A0x56a256640117aeba!2sRevo%20Sport%20-%20Norte!5e0!3m2!1ses-419!2spe!4v1720237977658!5m2!1ses-419!2spe'
+      mapaUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.961740946441!2d-71.56213432396771!3d-16.375911237544727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a11c8e84a71%3A0xe2cff0b88bb16b97!2sRevo%20Sport%20Cerro%20Colorado!5e0!3m2!1ses!2spe!4v1720529623114!5m2!1ses!2spe'
     },
     {
       sede: 'SEDE BUSTAMANTE',
