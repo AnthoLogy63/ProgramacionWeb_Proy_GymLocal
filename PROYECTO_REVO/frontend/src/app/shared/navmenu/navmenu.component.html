@@ -7,13 +7,11 @@
     <ul>
       <li><a [routerLink]="['/home']">HOME</a></li>
       <li><a routerLink="/espacios">ESPACIOS</a></li>
-      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">LOGIN</a></li>
-      <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">REGISTER</a></li>
-      <li *ngIf="isLoggedIn()"><a [routerLink]="['/viewLogin']">PERFIL</a></li>
-      <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">CERRAR SESIÓN</a></li>
-       <li *ngIf="isLoggedIn()"><a [routerLink]="['/rutinas']">Rutinas</a></li> 
+      <li *ngIf="!isLoggedIn"><a [routerLink]="['/login']">LOGIN</a></li>
+      <li *ngIf="!isLoggedIn"><a [routerLink]="['/register']">REGISTER</a></li>
+      <li *ngIf="isLoggedIn"><a [routerLink]="['/viewLogin']">PERFIL</a></li>
+      <li *ngIf="isLoggedIn"><a href="#" (click)="logout()">CERRAR SESIÓN</a></li>
+       <li *ngIf="isLoggedIn"><a [routerLink]="['/rutinas']">Rutinas</a></li> 
     </ul>
   </nav>
 </header>
-
-

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { ApiAuthService } from '../../core/services/api-auth.service';
@@ -13,31 +13,27 @@ import { CommonModule } from '@angular/common';
   templateUrl: './navmenu.component.html',
   styleUrl: './navmenu.component.css'
 })
-export class NavmenuComponent {
+
+export class NavmenuComponent implements OnInit {
+  isLoggedIn: boolean = false;
+
   constructor(private apiAuthService: ApiAuthService, private router: Router) {}
 
-  isLoggedIn(): boolean {
-    return this.apiAuthService.isLoggedIn();
+  ngOnInit(): void {
+    this.apiAuthService.isLoggedIn().subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   logout(): void {
-    this.apiAuthService.logout().pipe(
-      catchError(error => {
-        console.error('Error logging out', error);
-        return of(null); 
-      })
-    ).subscribe(
+    this.apiAuthService.logout().subscribe(
       response => {
-        if (response) {
-          console.log('Logout successful', response);
-          this.router.navigate(['/login']); 
-        } else {
-          console.error('Logout response was null or undefined');
-        }
+        console.log('Logout successful', response);
+        this.router.navigate(['/login']);
+      },
+      error => {
+        console.error('Error logging out', error);
       }
     );
   }
-
-
-
 }
