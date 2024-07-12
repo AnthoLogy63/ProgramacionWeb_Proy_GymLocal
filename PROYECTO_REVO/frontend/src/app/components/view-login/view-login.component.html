@@ -21,6 +21,8 @@
         <div class="indicador"><p>Planes Actuales:</p></div>
         <div class="datos"><p id="planesActuales">{{ userData.membership_active ? 'Activo' : 'Inactivo' }}</p></div>
       </div>
+
+      <button class="editarButton" [routerLink]="['/editarPerfil']">Editar Perfil</button>
     </div>
   </div>
 </div>

@@ -1,0 +1,29 @@
+<div class="editPerfil" *ngIf="userData$ | async as userData">
+    <div class="left">
+        <h1>Avatar</h1>
+        <div class="avatar" [style.background-image]="'url(' + userData.avatar + ')'" [attr.alt]="'Avatar ' + userData.username"></div>
+        <button>Seleccione Nuevo Avatar</button>
+        <button>Guardar</button>
+    </div>
+    <div class="rigth">
+        <form class="namesForm" action="">
+            <div>
+                <label for="firstName">Nombre:</label>
+                <input type="text" name="firstName" id="firstName" placeholder="{{ userData.first_name }}">
+            </div>
+            <div>
+                <label for="lastName">Apellido:</label>
+                <input type="text" name="lastName" id="lastName" placeholder="{{ userData.last_name }}">
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+    
+        <form class="usernameForm" action="">
+            <div>
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" name="username" id="username" placeholder="{{ userData.username }}">
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+</div>
