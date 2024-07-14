@@ -1,28 +1,93 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenamiento PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #222;
+            border-bottom: 2px solid #fbc02d;
+            padding-bottom: 10px;
+        }
+        p {
+            margin: 5px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 1.2em;
+            color: #fbc02d;
+            margin-bottom: 10px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .section-content {
+            background-color: #fbc02d;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .exercise {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
 <body>
-    <h1>Datos Físicos</h1>
-    <p>Edad: {{ datos_fisicos.edad }}</p>
-    <p>Peso: {{ datos_fisicos.peso }}</p>
-    <p>Talla: {{ datos_fisicos.talla }}</p>
-    <p>IMC: {{ datos_fisicos.imc }}</p>
-    <p>Masa Muscular: {{ datos_fisicos.masa_muscular }}</p>
-    <p>Recomendaciones: {{ datos_fisicos.recomendaciones }}</p>
+    <div class="container">
+        <h1>Datos Físicos</h1>
+        <div class="section-content">
+            <p><strong>Edad:</strong> {{ datos_fisicos.edad }}</p>
+            <p><strong>Peso:</strong> {{ datos_fisicos.peso }}</p>
+            <p><strong>Talla:</strong> {{ datos_fisicos.talla }}</p>
+            <p><strong>IMC:</strong> {{ datos_fisicos.imc }}</p>
+            <p><strong>Masa Muscular:</strong> {{ datos_fisicos.masa_muscular }}</p>
+            <p><strong>Recomendaciones:</strong> {{ datos_fisicos.recomendaciones }}</p>
+        </div>
 
-    <h1>Rutinas</h1>
-    {% for rutina in rutinas %}
-    <div>
-        <p>Nombre del ejercicio: {{ rutina.nombre_ejercicio }}</p>
-        <p>Número de repeticiones: {{ rutina.numero_repeticiones }}</p>
-        <p>Día: {{ rutina.dia }}</p>
-        <p>Músculo a ejercitar: {{ rutina.musculo_ejercitar }}</p>
-    </div>
-    {% endfor %}
+        <h1>Rutinas</h1>
+        <div class="section">
+            {% for rutina in rutinas %}
+            <div class="exercise">
+                <p><strong>Nombre del ejercicio:</strong> {{ rutina.nombre_ejercicio }}</p>
+                <p><strong>Número de repeticiones:</strong> {{ rutina.numero_repeticiones }}</p>
+                <p><strong>Día:</strong> {{ rutina.dia }}</p>
+                <p><strong>Músculo a ejercitar:</strong> {{ rutina.musculo_ejercitar }}</p>
+            </div>
+            {% endfor %}
+        </div>
 
-    <h1>Coaches</h1>
-    {% for coach in coaches %}
-    <div>
-        <p>Nombre: {{ coach.nombre }}</p>
+        <h1>Coaches</h1>
+        <div class="section">
+            {% for coach in coaches %}
+            <div class="exercise">
+                <p><strong>Nombre:</strong> {{ coach.nombre }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
 </body>
 </html>
