@@ -39,12 +39,11 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
-
-      this.apiAuthService.login(username, password).subscribe(
+      const credentials = this.loginForm.value;
+      this.apiAuthService.login(credentials).subscribe(
         response => {
           if (response) {
             console.log('Login successful', response);
-            this.apiAuthService.setCurrentUser(username);
             this.router.navigate(['/home']);
           }
         },

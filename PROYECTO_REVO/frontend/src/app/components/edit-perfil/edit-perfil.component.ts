@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiAuthService } from '../../core/services/api-auth.service';
-import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-view-login',
+  selector: 'app-edit-perfil',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterModule],
-  templateUrl: './view-login.component.html',
-  styleUrl: './view-login.component.css'
+  templateUrl: './edit-perfil.component.html',
+  styleUrl: './edit-perfil.component.css'
 })
-export class ViewLoginComponent implements OnInit {
+export class EditPerfilComponent implements OnInit {
   userData$: Observable<any> = new Observable<any>(); // Inicialización aquí
 
   constructor(private authService: ApiAuthService) { }

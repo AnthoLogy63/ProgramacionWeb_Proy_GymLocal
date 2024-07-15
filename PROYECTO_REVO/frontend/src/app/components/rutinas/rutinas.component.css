@@ -1,83 +1,57 @@
-.body-viewLogin{
-    background-image: url('/assets/fondo_perfil.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.perfilContainer {
-    min-width: 390px;
-    min-height: 470px;
-    background-color: #000000a6;
-    width: 30%;
-    max-height: 600px;
-    height: 570px;
-    position: relative;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.informacion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.avatar{
-    height: 130px;
-    width: 130px;
-    background-color: #effa4a;
-    border-radius: 50%;
-}
-
-.sectionInfo { 
-    height: 45px;
-    min-width: 370px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-}
-
-.indicador, .datos {
-    margin: 10px;
-    font-size: 17.5px;
-}
-
-.indicador {
-    color: #FFF112;
-}
-
-.datos {
-    color: #ffffff;
-}
-
-.editarButton {
-    height: 36px;
-    width: 130px;
-    margin-top: 20px;
-    border-radius: 8px;
-    border: #00000000;
-    background-color: #FFF112;
-    font-size: 16px;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s ease;
+.body-viewLogin {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
   }
   
-  .editarButton:hover {
-    background-color: #00000067;
-    border: solid 1px  #FFF112;
-    color: #FFF112;
+  .datosFisicosContainer, .rutinasContainer, .coachesContainer {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  
+  .sectionInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .sectionInfo:last-child {
+    border-bottom: none;
+  }
+  
+  .indicador p {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  .datos p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+  }
+  
+  button {
+    background-color: #fbc02d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ffa000;
+  }
+  

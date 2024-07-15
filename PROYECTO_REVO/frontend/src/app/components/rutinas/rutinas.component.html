@@ -23,11 +23,14 @@
     <div class="sectionInfo">
       <div class="indicador"><p>Recomendaciones:</p></div>
       <div class="datos"><p id="recomendaciones">{{ dato.recomendaciones }}</p></div>
+    </div>
+    <div class="buttons">
       <button (click)="downloadPdf()">Descargar PDF</button>
       <button (click)="sendPdf()">Enviar PDF por Correo</button>
     </div>
   </div>
 </div>
+
 <div class="body-viewLogin" *ngIf="rutinas.length > 0">
   <div class="rutinasContainer" *ngFor="let rutina of rutinas">
     <div class="sectionInfo">
@@ -36,13 +39,12 @@
     </div>
     <div class="sectionInfo">
       <div class="indicador"><p>Número de repeticiones:</p></div>
-      <div class="datos"><p id="numero_repeticiones">{{ rutina.numero_repeticiones}}</p></div>
+      <div class="datos"><p id="numero_repeticiones">{{ rutina.numero_repeticiones }}</p></div>
     </div>
     <div class="sectionInfo">
       <div class="indicador"><p>Día:</p></div>
-      <div class="datos"><p id="dia">{{ rutina.dia}}</p></div>
+      <div class="datos"><p id="dia">{{ rutina.dia }}</p></div>
     </div>
-    
     <div class="sectionInfo">
       <div class="indicador"><p>Músculo a ejercitar:</p></div>
       <div class="datos"><p id="musculo_ejercita">{{ rutina.musculo_ejercitar }}</p></div>

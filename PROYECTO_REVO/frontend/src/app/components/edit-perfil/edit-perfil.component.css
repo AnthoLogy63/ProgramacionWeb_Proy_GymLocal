@@ -1,0 +1,89 @@
+.editPerfil {
+    background-image: url('/assets/login-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.left, .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.avatar {
+    height: 130px;
+    width: 130px;
+    background-color: #FFF112;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.namesForm, .usernameForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    width: 100%;
+}
+
+.namesForm div, .usernameForm div {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.namesForm label, .usernameForm label {
+    color: white; /* Texto blanco para mejor visibilidad */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.namesForm input, .usernameForm input {
+    width: calc(100% - 20px); /* Ajusta el ancho */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #FFF112; /* Línea inferior amarilla */
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.namesForm input:focus, .usernameForm input:focus {
+    outline: none;
+    border-bottom: 2px solid #FFF112; /* Línea inferior amarilla más brillante al enfocar */
+}
+
+button {
+    background-color: #FFF112;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #FFF112;
+}

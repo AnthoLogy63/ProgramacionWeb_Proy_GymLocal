@@ -29,7 +29,11 @@ export class EspaciosComponent {
       sede: 'SEDE BUSTAMANTE',
       direccion: 'AV. DOLORES 163',
       referencia: '(CERCA DEL COLEGIO PAMER AREQUIPA)',
+<<<<<<< HEAD
       mapaUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.930022521709!2d-71.52848081432452!3d-16.42837999840003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b20604bf951%3A0x831dfdcd15669b30!2sRevo%20Sport%20-%20Sede%20Bustamante!5e0!3m2!1ses!2spe!4v1720548434164!5m2!1ses!2spe'
+=======
+      mapaUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.930021724348!2d-71.5261848239664!3d-16.428380038887397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b20604bf951%3A0x831dfdcd15669b30!2sRevo%20Sport%20-%20Sede%20Bustamante!5e0!3m2!1ses!2spe!4v1721007838893!5m2!1ses!2spe'
+>>>>>>> main
     },
     {
       sede: 'SEDE SACHACA',

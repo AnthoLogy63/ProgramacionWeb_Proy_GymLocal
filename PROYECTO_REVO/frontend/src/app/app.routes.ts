@@ -5,7 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { EspaciosComponent } from './components/espacios/espacios.component';
 import { ViewLoginComponent } from './components/view-login/view-login.component';
-import {RutinasComponent} from './components/rutinas/rutinas.component';
+import { RutinasComponent} from './components/rutinas/rutinas.component';
+import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,6 +16,7 @@ export const routes: Routes = [
   {path: 'espacios', component: EspaciosComponent },
   {path: 'viewLogin', component: ViewLoginComponent },
   {path: 'rutinas', component: RutinasComponent},
+  {path: 'editarPerfil', component: EditPerfilComponent},
 ];
    
 @NgModule({
