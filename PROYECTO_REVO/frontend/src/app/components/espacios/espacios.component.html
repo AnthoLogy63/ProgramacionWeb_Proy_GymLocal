@@ -1,6 +1,6 @@
 <div class="container">
   <div class="header">
-    <h1>Vive la experiencia de la <span class="highlight">REVO:</span> Tu Gym ideal</h1>
+    <h1>VIVE LA EXPERIENCIA DE LA<br> <span class="highlight">REVO:</span> TU GYM IDEAL</h1>
   </div>
   
   <div class="image-gallery">
@@ -17,13 +17,20 @@
       <img src="assets/space_image6.jpg" alt="Gym Image 6" />
     </div>
   </div>
+
+  <div class="header">
+    <h1>NUESTRAS <span class="highlight">SEDES</span></h1>
+  </div>
+
   <div class="content">
     <div *ngFor="let local of locales; let i = index" class="local">
+
       <div class="local-info">
         <h2>{{ local.sede }}</h2>
         <p>{{ local.direccion }}</p>
         <p>{{ local.referencia }}</p>
       </div>
+      
       <iframe
         [src]="getGoogleMapUrl(local)"
         width="600" height="400"
