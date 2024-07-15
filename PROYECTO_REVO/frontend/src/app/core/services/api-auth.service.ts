@@ -53,6 +53,11 @@ export class ApiAuthService {
     return user ? JSON.parse(user) : null;
   }
 
+  public checkLoginStatus(): boolean {
+    const user = this.getCurrentUser();
+    return user !== null;
+  }
+
   //Obtener la info del usuario
   getUserData(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/dataUser/`, { withCredentials: true });
