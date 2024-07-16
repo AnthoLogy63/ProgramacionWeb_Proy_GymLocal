@@ -1,23 +1,36 @@
 import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
 import { ApiAuthService } from '../../core/services/api-auth.service';
 import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-edit-perfil',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterModule],
+  imports: [CommonModule, RouterOutlet, RouterModule, ReactiveFormsModule],
   templateUrl: './edit-perfil.component.html',
   styleUrl: './edit-perfil.component.css'
 })
+
 export class EditPerfilComponent implements OnInit {
   userData$: Observable<any> = new Observable<any>(); 
   selectedFile: File | null = null;
+  namesForm: FormGroup;
+  usernameForm: FormGroup;
 
   @ViewChild('fileInput') fileInput!: ElementRef;
 
-  constructor(private authService: ApiAuthService) { }
+  constructor(private authService: ApiAuthService, private fb: FormBuilder) { 
+    this.namesForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required]
+    });
+
+    this.usernameForm = this.fb.group({
+      username: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
     this.getUserInfo();
@@ -25,6 +38,16 @@ export class EditPerfilComponent implements OnInit {
 
   getUserInfo() {
     this.userData$ = this.authService.getUserData();
+    this.userData$.subscribe(userData => {
+      this.namesForm.patchValue({
+        firstName: userData.first_name,
+        lastName: userData.last_name
+      });
+
+      this.usernameForm.patchValue({
+        username: userData.username
+      });
+    });
   }
 
   onFileSelected(event: any): void {
@@ -52,11 +75,9 @@ export class EditPerfilComponent implements OnInit {
   }
 
   onSaveNames(): void {
-    this.userData$.subscribe(userData => {
-      this.authService.updateUserData({
-        first_name: userData.first_name,
-        last_name: userData.last_name
-      }).subscribe(
+    if (this.namesForm.valid) {
+      const { firstName, lastName } = this.namesForm.value;
+      this.authService.updateUserData({ first_name: firstName, last_name: lastName }).subscribe(
         response => {
           console.log('Nombres actualizados con éxito', response);
           this.getUserInfo(); // Actualizar la vista con los nuevos nombres
@@ -65,14 +86,13 @@ export class EditPerfilComponent implements OnInit {
           console.error('Error al actualizar los nombres', error);
         }
       );
-    });
+    }
   }
 
   onSaveUsername(): void {
-    this.userData$.subscribe(userData => {
-      this.authService.updateUserData({
-        username: userData.username
-      }).subscribe(
+    if (this.usernameForm.valid) {
+      const { username } = this.usernameForm.value;
+      this.authService.updateUserData({ username }).subscribe(
         response => {
           console.log('Nombre de usuario actualizado con éxito', response);
           this.getUserInfo(); // Actualizar la vista con el nuevo nombre de usuario
@@ -81,6 +101,6 @@ export class EditPerfilComponent implements OnInit {
           console.error('Error al actualizar el nombre de usuario', error);
         }
       );
-    });
+    }
   }
 }

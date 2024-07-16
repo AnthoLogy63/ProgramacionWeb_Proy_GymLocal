@@ -1,32 +1,49 @@
 <div class="editPerfil" *ngIf="userData$ | async as userData">
-    <div class="container">
-        <div class="left">
-            <h1>Avatar</h1>
-            <div class="avatar" [style.background-image]="'url(' + userData.avatar + ')'" [attr.alt]="'Avatar ' + userData.username"></div>
-            <button (click)="fileInput.click()">Seleccione Nuevo Avatar</button>
-            <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
-            <button (click)="onSaveAvatar()">Guardar</button>
-        </div>
-        <div class="right">
-            <form class="namesForm" (submit)="onSaveNames($event)">
-                <div>
-                    <label for="firstName">Nombre:</label>
-                    <input type="text" name="firstName" id="firstName" [(ngModel)]="userData.first_name">
-                </div>
-                <div>
-                    <label for="lastName">Apellido:</label>
-                    <input type="text" name="lastName" id="lastName" [(ngModel)]="userData.last_name">
-                </div>
-                <button type="submit">Guardar</button>
-            </form>
-        
-            <form class="usernameForm" (submit)="onSaveUsername($event)">
-                <div>
-                    <label for="username">Nombre de Usuario:</label>
-                    <input type="text" name="username" id="username" [(ngModel)]="userData.username">
-                </div>
-                <button type="submit">Guardar</button>
-            </form>
-        </div>
+    <div class="formContainer">
+      <div class="left">
+        <h1>Avatar</h1>
+        <div class="avatar" [style.background-image]="'url(' + userData.avatar + ')'" [attr.alt]="'Avatar ' + userData.username"></div>
+        <button (click)="fileInput.click()">Seleccione Nuevo Avatar</button>
+        <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+        <button (click)="onSaveAvatar()">Guardar</button>
+      </div>
+      <div class="right">
+        <form [formGroup]="namesForm" (ngSubmit)="onSaveNames()">
+          <h1>Edita tu Nombre</h1>
+          <div>
+            <label for="firstName">Nombre:</label>
+            <input 
+              type="text" 
+              id="firstName" 
+              formControlName="firstName" 
+              [placeholder]="'Nombre' + (namesForm.controls['firstName'].invalid && namesForm.controls['firstName'].touched ? ' *' : '')"
+            >
+          </div>
+          <div>
+            <label for="lastName">Apellido:</label>
+            <input 
+              type="text" 
+              id="lastName" 
+              formControlName="lastName" 
+              [placeholder]="'Apellido' + (namesForm.controls['lastName'].invalid && namesForm.controls['lastName'].touched ? ' *' : '')"
+            >
+          </div>
+          <button type="submit" [disabled]="namesForm.invalid">Guardar</button>
+        </form>
+  
+        <form [formGroup]="usernameForm" (ngSubmit)="onSaveUsername()">
+          <h1>Edita tu Nombre de Usuario</h1>
+          <div>
+            <label for="username">Nombre de Usuario:</label>
+            <input 
+              type="text" 
+              id="username" 
+              formControlName="username" 
+              [placeholder]="'Nombre de Usuario' + (usernameForm.controls['username'].invalid && usernameForm.controls['username'].touched ? ' *' : '')"
+            >
+          </div>
+          <button type="submit" [disabled]="usernameForm.invalid">Guardar</button>
+        </form>
+      </div>
     </div>
 </div>
