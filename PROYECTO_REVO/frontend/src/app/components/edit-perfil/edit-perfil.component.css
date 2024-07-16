@@ -1,9 +1,9 @@
 .editPerfil {
-    background-image: url('/assets/login-fondo.jpg');
+    background-color: #24231f;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
