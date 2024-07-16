@@ -34,7 +34,6 @@ export class ApiAuthService {
       })
     );
   }
-
   logout(): Observable<any> {
     return this.http.post(`${this.apiUrl}/logout/`, {}, { headers: this.getCSRFHeaders(), withCredentials: true }).pipe(
       tap(() => {
@@ -43,16 +42,13 @@ export class ApiAuthService {
       })
     );
   }
-
   isLoggedIn(): Observable<boolean> {
     return this.isLoggedInSubject.asObservable();
   }
-
   getCurrentUser(): any {
     const user = localStorage.getItem('currentUser');
     return user ? JSON.parse(user) : null;
   }
-
   public checkLoginStatus(): boolean {
     const user = this.getCurrentUser();
     return user !== null;
@@ -75,11 +71,18 @@ export class ApiAuthService {
     return this.http.get<any>(`${this.apiUrl}/coaches/${userId}/`, { withCredentials: true })
   }
 
+  //Actualizar datos del usuario
+  updateAvatar(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/update-avatar/`, formData);
+  }
+  updateUserData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/update-profile/`, data);
+  }
+
   //Método para enviar y descargar pdf
   downloadTrainingPdf() {
     return this.http.get(`${this.apiUrl}/download_training_pdf/`, { responseType: 'blob', withCredentials: true });
   }
-
   sendTrainingPdf() {
     return this.http.get(`${this.apiUrl}/send_training_pdf/`, { withCredentials: true });
   }
