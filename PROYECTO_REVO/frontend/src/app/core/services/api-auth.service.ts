@@ -73,10 +73,10 @@ export class ApiAuthService {
 
   //Actualizar datos del usuario
   updateAvatar(formData: FormData): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/update-avatar/`, formData);
+    return this.http.post<any>(`${this.apiUrl}/update-avatar/`,  formData, { headers: this.getCSRFHeaders(), withCredentials: true });
   }
   updateUserData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/update-profile/`, data);
+    return this.http.post<any>(`${this.apiUrl}/update-profile/`, data, { headers: this.getCSRFHeaders(), withCredentials: true });
   }
 
   //Método para enviar y descargar pdf

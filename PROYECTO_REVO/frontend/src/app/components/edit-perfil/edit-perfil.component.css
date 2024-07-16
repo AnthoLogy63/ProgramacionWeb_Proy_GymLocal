@@ -1,4 +1,4 @@
-.editPerfil {
+.editarPerfil {
     background-color: #24231f;
     background-size: cover;
     background-position: center;
@@ -10,8 +10,7 @@
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.694); /* Fondo negro con opacidad */
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.694); 
     border-radius: 10px;
     display: flex;
     width: 80%;

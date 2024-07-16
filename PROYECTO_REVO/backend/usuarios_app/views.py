@@ -1,9 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.contrib.auth.decorators import login_required
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import UserSerializer
@@ -47,3 +48,28 @@ def getDataUser(request):
         'avatar': request.build_absolute_uri(user.avatar.url) if user.avatar else None
     }
     return JsonResponse(data)
+
+@login_required
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def updateProfile(request):
+    if request.method == 'POST':
+        data = request.data
+        user = request.user
+        user.first_name = data.get('first_name', user.first_name)
+        user.last_name = data.get('last_name', user.last_name)
+        user.username = data.get('username', user.username)
+        user.save()
+        return Response({'message': 'Perfil actualizado con éxito'}, status=status.HTTP_200_OK)
+    return Response({'error': 'Método no permitido'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+@login_required
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def updateAvatar(request):
+    user = request.user
+    if 'avatar' in request.FILES:
+        user.avatar = request.FILES['avatar']
+        user.save()
+        return Response({'message': 'Avatar updated successfully'})
+    return Response({'error': 'No avatar found in request'}, status=status.HTTP_400_BAD_REQUEST)

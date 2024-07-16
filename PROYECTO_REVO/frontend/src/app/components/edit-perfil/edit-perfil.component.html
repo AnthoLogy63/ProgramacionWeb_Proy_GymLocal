@@ -1,5 +1,5 @@
-<div class="editPerfil" *ngIf="userData$ | async as userData">
-    <div class="formContainer">
+<div class="editarPerfil" *ngIf="userData$ | async as userData">
+    <div class="container">
       <div class="left">
         <h1>Avatar</h1>
         <div class="avatar" [style.background-image]="'url(' + userData.avatar + ')'" [attr.alt]="'Avatar ' + userData.username"></div>
@@ -8,7 +8,7 @@
         <button (click)="onSaveAvatar()">Guardar</button>
       </div>
       <div class="right">
-        <form [formGroup]="namesForm" (ngSubmit)="onSaveNames()">
+        <form [formGroup]="namesForm" (ngSubmit)="onSaveNames()" class="namesForm">
           <h1>Edita tu Nombre</h1>
           <div>
             <label for="firstName">Nombre:</label>
@@ -31,7 +31,7 @@
           <button type="submit" [disabled]="namesForm.invalid">Guardar</button>
         </form>
   
-        <form [formGroup]="usernameForm" (ngSubmit)="onSaveUsername()">
+        <form [formGroup]="usernameForm" (ngSubmit)="onSaveUsername()" class="usernameForm">
           <h1>Edita tu Nombre de Usuario</h1>
           <div>
             <label for="username">Nombre de Usuario:</label>
@@ -46,4 +46,4 @@
         </form>
       </div>
     </div>
-</div>
+  </div>
