@@ -54,7 +54,7 @@ footer {
   color: white;
   text-decoration: none;
   border-radius: 25px; /* Hacer el enlace circular */
-  padding: 4px 7px;
+  padding: 4px 10px;
   transition: background-color 0.3s ease, color 0.3s ease; /* Transición para un efecto suave */
 }
 
