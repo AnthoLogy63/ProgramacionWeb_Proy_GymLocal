@@ -53,8 +53,12 @@ footer {
 .footer-section a {
   color: white;
   text-decoration: none;
+  border-radius: 25px; /* Hacer el enlace circular */
+  padding: 4px 7px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición para un efecto suave */
 }
 
 .footer-section a:hover {
-  text-decoration: underline;
+  background-color: #FFF112; /* Fondo circular al pasar el cursor y si está activo */
+  color: #000; /* Color del texto cuando está activo */
 }
