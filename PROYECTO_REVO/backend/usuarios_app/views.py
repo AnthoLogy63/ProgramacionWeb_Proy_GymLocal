@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import UserSerializer
+from entrenamientos_app.models import Rutina, Coach
 
 @api_view(['POST'])
 def logout_view(request):
@@ -30,7 +31,23 @@ class UserCreate(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            user = serializer.save()
+             # Crear rutinas base y asignarlas al coach base
+            coach_base, created = Coach.objects.get_or_create(nombre="Bryan")
+
+            rutinas_base = [
+                {"nombre_ejercicio": "PushUp", "numero_repeticiones": 10, "dia": 1, "musculo_ejercitar": "Pecho", "coach": coach_base},
+                {"nombre_ejercicio": "Peso Muerto", "numero_repeticiones": 12, "dia": 2, "musculo_ejercitar": "Espalda", "coach": coach_base},
+                {"nombre_ejercicio": "Sentadilla búlgara", "numero_repeticiones": 15, "dia": 3, "musculo_ejercitar": "Piernas", "coach": coach_base},
+                {"nombre_ejercicio": "Flexiones de pared", "numero_repeticiones": 8, "dia": 4, "musculo_ejercitar": "Brazos", "coach": coach_base},
+                {"nombre_ejercicio": "Press Militar", "numero_repeticiones": 20, "dia": 5, "musculo_ejercitar": "Hombros", "coach": coach_base},
+            ]
+
+            for rutina_data in rutinas_base:
+                Rutina.objects.create(**rutina_data)
+
+            # Asignar coach base al usuario
+            coach_base.usuarios.add(user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             print(serializer.errors)
