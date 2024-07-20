@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import UserSerializer
-from entrenamientos_app.models import Rutina, Coach
+from entrenamientos_app.models import Rutina, Coach, DatosFisicos
 
 @api_view(['POST'])
 def logout_view(request):
@@ -32,7 +32,19 @@ class UserCreate(APIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
-             # Crear rutinas base y asignarlas al coach base
+
+            # Crear datos físicos por defecto para el nuevo usuario
+            DatosFisicos.objects.create(
+                usuario=user,
+                edad=20,  
+                peso=70.5,
+                talla=1.70,
+                imc=10.3,
+                masa_muscular=75.6,
+                recomendaciones="Comer de forma más balanceada"
+            )
+
+            # Crear rutinas base y asignarlas al coach base
             coach_base, created = Coach.objects.get_or_create(nombre="Bryan")
 
             rutinas_base = [
@@ -48,6 +60,7 @@ class UserCreate(APIView):
 
             # Asignar coach base al usuario
             coach_base.usuarios.add(user)
+
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             print(serializer.errors)
