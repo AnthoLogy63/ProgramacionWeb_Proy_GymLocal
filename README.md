@@ -23,7 +23,7 @@ Este artículo describe la arquitectura del sistema, incluyendo las aplicaciones
 
 Además, se detallan los componentes de la interfaz, como las plantillas HTML, y la configuración global del proyecto en el archivo settings.py. La implementación de estas funcionalidades asegura una experiencia de usuario cohesiva y personalizada, respaldada por un diseño técnico robusto y bien estructurado.
 
-![][./Images/logo.png]
+![Logotipo de la empresa seleccionada](./images/logo.png)
 
 *Figura 1\. Logotipo de la empresa seleccionada*
 
