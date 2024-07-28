@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: mi-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    publishDirectory: frontend/dist/frontend
+    plan: free
