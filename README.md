@@ -36,6 +36,7 @@ Dentro de este proyecto se trabajó con el flujo de intercambio de información 
 Angular es un framework de desarrollo web para construir aplicaciones de una sola página (SPA) utilizando TypeScript. Desarrollado por Google, Angular proporciona una arquitectura basada en componentes, lo que permite construir interfaces de usuario dinámicas y reutilizables. Ofrece herramientas y funcionalidades como enlace bidireccional de datos (data binding), inyección de dependencias, y un sistema de módulos para organizar el código. \[1\] Angular también incluye un conjunto completo de herramientas para pruebas, enrutamiento, y comunicación con servicios backend, facilitando el desarrollo de aplicaciones web complejas y mantenibles. \[2\]  
 
 ![Django Imagen](./images/imagen1.png)
+
 *Figura 2\. Framework Angular*
 
 ## *B.	Django*
@@ -43,6 +44,7 @@ Angular es un framework de desarrollo web para construir aplicaciones de una sol
 Django es un framework de desarrollo web de alto nivel para Python que facilita la creación de aplicaciones web de manera rápida y eficiente. \[3\] Proporciona una estructura robusta y predefinida para el desarrollo, con características como un sistema de administración integrado, un ORM (Object-Relational Mapping) para la gestión de bases de datos, y un enfoque en la seguridad. \[4\] Django sigue el principio de "No te repitas" (DRY, "Don't Repeat Yourself"), promoviendo la reutilización de código y la consistencia en el desarrollo de aplicaciones web. \[5\]
 
 ![Django Imagen](./images/imagen2.png)
+
 *Figura 3\. Framework Django*
 
 # III. Estructura del Proyecto
@@ -54,17 +56,21 @@ El proyecto de frontend está organizado dentro del directorio \`frontend\`, el 
 El código fuente principal está en el directorio \`src\`, que incluye el subdirectorio \`app\`. Dentro de \`app\`, el directorio \`components\` alberga varios componentes organizados en diferentes carpetas según su funcionalidad. El directorio \`espacios\` contiene los archivos \`espacios.component.css\` (estilos CSS), \`espacios.component.html\` (plantilla HTML), \`espacios.component.spec.ts\` (pruebas unitarias en TypeScript) y \`espacios.component.ts\` (lógica del componente en TypeScript). El directorio \`home\` incluye los archivos \`home.component.css\`, \`home.component.html\`, \`home.component.spec.ts\` y \`home.component.ts\`, que definen la página principal o de inicio. El directorio \`login\` contiene los archivos \`login.component.css\`, \`login.component.html\`, \`login.component.spec.ts\` y \`login.component.ts\`, necesarios para el componente de inicio de sesión. El directorio \`register\` alberga los archivos \`register.component.css\`, \`register.component.html\`, \`register.component.spec.ts\` y \`register.component.ts\`, utilizados para la funcionalidad de registro de nuevos usuarios. El directorio \`rutinas\` incluye los archivos \`rutinas.component.css\`, \`rutinas.component.html\`, \`rutinas.component.spec.ts\` y \`rutinas.component.ts\`, relacionados con la gestión de rutinas. Además, el subdirectorio \`view-login\` es parte del conjunto de componentes del proyecto.
 
 ![Imagen](./images/imagen3.png)
+
 *Figura 4\. Página home*
 
 ![Imagen](./images/imagen4.png)
+
 *Figura 5\. Página Espacios*
 
 Dentro del subdirectorio \`core\`, se encuentra \`services\`, que contiene archivos específicos como \`api-auth.service.spec.ts\`, \`api-auth.service.ts\`, \`api-reg-user.service.spec.ts\` y \`api-reg-user.service.ts\`. Estos archivos probablemente definen pruebas unitarias y la lógica de los servicios de autenticación y registro de usuarios, centralizando la lógica de autenticación y comunicación con el backend.
 
 ![Imagen](./images/imagen5.png)
+
 *Figura 6\. Página Login*
 
 ![Imagen](./images/imagen6.png)
+
 *Figura 7\. Página Register*
 
 El directorio \`footer\` contiene los archivos \`footer.component.css\`, \`footer.component.html\`, \`footer.component.spec.ts\` y \`footer.component.ts\`, los cuales definen el componente del pie de página del proyecto. 
@@ -100,6 +106,7 @@ La arquitectura del proyecto se compone de dos aplicaciones principales y otros 
 *Figura 9\. Página de Perfil*
 
 ![Imagen](./images/imagen9.png)
+
 *Figura 10\. Página de Editar Perfil*
 
 En la Aplicación de Usuarios, el modelo User extiende el modelo de usuario estándar de Django para incluir atributos adicionales como membership\_active y avatar. En la Aplicación de Entrenamientos, el modelo DatosFisicos almacena datos físicos del usuario como edad, peso y recomendaciones. El modelo Coach representa a los entrenadores y sus usuarios asociados. El modelo Rutina detalla los ejercicios asignados por los entrenadores. 
@@ -109,6 +116,7 @@ La serialización de datos se maneja mediante serializers específicos para cada
 Las vistas de la Aplicación de Usuarios incluyen la vista UserCreate, que crea nuevos usuarios y asigna automáticamente rutinas y datos físicos básicos. Las vistas login\_view y logout\_view gestionan la autenticación de los usuarios, mientras que getDataUser, updateProfile y updateAvatar gestionan la recuperación y actualización de perfiles de usuario. En la Aplicación de Entrenamientos, la vista DatosFisicosViewSet gestiona las operaciones CRUD de datos físicos, y las vistas RutinaViewSet y CoachViewSet gestionan las operaciones CRUD de rutinas y entrenadores. Las vistas get\_datos\_fisicos, get\_rutinas y get\_coaches recuperan los datos físicos, rutinas y entrenadores para un usuario específico. Además, las vistas download\_training\_pdf y send\_training\_pdf generan y envían por correo un PDF con las rutinas y datos físicos. 
 
 ![Imagen](./images/imagen10.png)
+
 *Figura 11\. Página de Rutinas Automáticas*
 
 Las URLs de la Aplicación de Usuarios definen rutas para las vistas de autenticación y gestión de usuarios, mientras que las URLs de la Aplicación de Entrenamientos definen rutas para las vistas y viewsets relacionados con datos físicos, rutinas y entrenadores. 
