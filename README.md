@@ -52,16 +52,17 @@ Django es un framework de desarrollo web de alto nivel para Python que facilita 
 El proyecto de frontend está organizado dentro del directorio \`frontend\`, el cual contiene varios subdirectorios y archivos relevantes para el desarrollo con Angular. En el directorio \`.angular\` se encuentran archivos de configuración específicos del framework Angular, necesarios para la compilación y ejecución del proyecto. El directorio \`.vscode\` almacena configuraciones del entorno de desarrollo Visual Studio Code, permitiendo personalizar y optimizar la experiencia de desarrollo. El directorio \`node\_modules\` contiene los módulos de Node.js instalados, esenciales para el funcionamiento del proyecto, ya que incluyen todas las dependencias y librerías utilizadas. 
 
 El código fuente principal está en el directorio \`src\`, que incluye el subdirectorio \`app\`. Dentro de \`app\`, el directorio \`components\` alberga varios componentes organizados en diferentes carpetas según su funcionalidad. El directorio \`espacios\` contiene los archivos \`espacios.component.css\` (estilos CSS), \`espacios.component.html\` (plantilla HTML), \`espacios.component.spec.ts\` (pruebas unitarias en TypeScript) y \`espacios.component.ts\` (lógica del componente en TypeScript). El directorio \`home\` incluye los archivos \`home.component.css\`, \`home.component.html\`, \`home.component.spec.ts\` y \`home.component.ts\`, que definen la página principal o de inicio. El directorio \`login\` contiene los archivos \`login.component.css\`, \`login.component.html\`, \`login.component.spec.ts\` y \`login.component.ts\`, necesarios para el componente de inicio de sesión. El directorio \`register\` alberga los archivos \`register.component.css\`, \`register.component.html\`, \`register.component.spec.ts\` y \`register.component.ts\`, utilizados para la funcionalidad de registro de nuevos usuarios. El directorio \`rutinas\` incluye los archivos \`rutinas.component.css\`, \`rutinas.component.html\`, \`rutinas.component.spec.ts\` y \`rutinas.component.ts\`, relacionados con la gestión de rutinas. Además, el subdirectorio \`view-login\` es parte del conjunto de componentes del proyecto.
-			![Imagen](./images/imagen3.png)
-			*Figura 4\. Página home*
 
-			![Imagen](./images/imagen4.png)
-			*Figura 5\. Página Espacios*
+![Imagen](./images/imagen3.png)
+*Figura 4\. Página home*
+
+![Imagen](./images/imagen4.png)
+*Figura 5\. Página Espacios*
 
 Dentro del subdirectorio \`core\`, se encuentra \`services\`, que contiene archivos específicos como \`api-auth.service.spec.ts\`, \`api-auth.service.ts\`, \`api-reg-user.service.spec.ts\` y \`api-reg-user.service.ts\`. Estos archivos probablemente definen pruebas unitarias y la lógica de los servicios de autenticación y registro de usuarios, centralizando la lógica de autenticación y comunicación con el backend.
 
-			![Imagen](./images/imagen5.png)
-			*Figura 6\. Página Login*
+![Imagen](./images/imagen5.png)
+*Figura 6\. Página Login*
 
 ![Imagen](./images/imagen6.png)
 *Figura 7\. Página Register*
@@ -93,11 +94,11 @@ En resumen, estos tres elementos principales se encargan de intercambiar la info
 
 La arquitectura del proyecto se compone de dos aplicaciones principales y otros componentes que colaboran para proporcionar una experiencia de usuario coherente y funcional. La Aplicación de Entrenamientos gestiona los datos relacionados con las rutinas y los datos físicos de los usuarios. La Aplicación de Usuarios maneja la autenticación y la gestión de perfiles de los usuarios. Los Templates contienen las plantillas HTML utilizadas para generar contenido dinámico, como PDFs, mientras que el archivo settings.py configura las aplicaciones, la base de datos y otros ajustes globales del proyecto. 
 
-			![Imagen](./images/imagen8.png)
-			*Figura 9\. Página de Perfil*
+![Imagen](./images/imagen8.png)
+*Figura 9\. Página de Perfil*
 
-			![Imagen](./images/imagen9.png)
-			*Figura 10\. Página de Editar Perfil*
+![Imagen](./images/imagen9.png)
+*Figura 10\. Página de Editar Perfil*
 
 En la Aplicación de Usuarios, el modelo User extiende el modelo de usuario estándar de Django para incluir atributos adicionales como membership\_active y avatar. En la Aplicación de Entrenamientos, el modelo DatosFisicos almacena datos físicos del usuario como edad, peso y recomendaciones. El modelo Coach representa a los entrenadores y sus usuarios asociados. El modelo Rutina detalla los ejercicios asignados por los entrenadores. 
 
