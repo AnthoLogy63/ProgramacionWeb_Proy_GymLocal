@@ -88,6 +88,7 @@ En tercer lugar, contamos con los ***services*** en el lado de Angular. Estos el
 En resumen, estos tres elementos principales se encargan de intercambiar la información entre los componentes a lo largo de todo el proyecto. Son cruciales para proporcionar la funcionalidad necesaria en la web, manejando aspectos como el inicio y cierre de sesión, el registro de usuarios, el almacenamiento de cookies, y otras funciones esenciales. \[6\]
 
 ![Imagen](./images/imagen7.png)
+
 *Figura 8\. Diagrama de flujo simple del proyecto*
 
 ## *C.	Estructura del Backend*
@@ -95,6 +96,7 @@ En resumen, estos tres elementos principales se encargan de intercambiar la info
 La arquitectura del proyecto se compone de dos aplicaciones principales y otros componentes que colaboran para proporcionar una experiencia de usuario coherente y funcional. La Aplicación de Entrenamientos gestiona los datos relacionados con las rutinas y los datos físicos de los usuarios. La Aplicación de Usuarios maneja la autenticación y la gestión de perfiles de los usuarios. Los Templates contienen las plantillas HTML utilizadas para generar contenido dinámico, como PDFs, mientras que el archivo settings.py configura las aplicaciones, la base de datos y otros ajustes globales del proyecto. 
 
 ![Imagen](./images/imagen8.png)
+
 *Figura 9\. Página de Perfil*
 
 ![Imagen](./images/imagen9.png)
