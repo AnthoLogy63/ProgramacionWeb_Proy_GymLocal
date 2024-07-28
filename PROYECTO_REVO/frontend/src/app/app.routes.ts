@@ -17,6 +17,7 @@ export const routes: Routes = [
   {path: 'viewLogin', component: ViewLoginComponent },
   {path: 'rutinas', component: RutinasComponent},
   {path: 'editarPerfil', component: EditPerfilComponent},
+  { path: '**', redirectTo: 'home', pathMatch: 'full' } 
 ];
    
 @NgModule({
