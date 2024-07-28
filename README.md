@@ -34,7 +34,7 @@ Dentro de este proyecto se trabajó con el flujo de intercambio de información 
 ## *A.	Angular*
 
 Angular es un framework de desarrollo web para construir aplicaciones de una sola página (SPA) utilizando TypeScript. Desarrollado por Google, Angular proporciona una arquitectura basada en componentes, lo que permite construir interfaces de usuario dinámicas y reutilizables. Ofrece herramientas y funcionalidades como enlace bidireccional de datos (data binding), inyección de dependencias, y un sistema de módulos para organizar el código. \[1\] Angular también incluye un conjunto completo de herramientas para pruebas, enrutamiento, y comunicación con servicios backend, facilitando el desarrollo de aplicaciones web complejas y mantenibles. \[2\]  
-![][image2]
+![Django Imagen](./images/imagen2.png)
 
 *Figura 2\. Framework Angular*
 
