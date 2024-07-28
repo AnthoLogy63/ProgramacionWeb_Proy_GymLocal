@@ -4,12 +4,12 @@
   </div>
   <nav class="navmenu">
     <ul>
-      <li><a [routerLink]="['/home']">HOME</a></li>
-      <li><a routerLink="/espacios">ESPACIOS</a></li>
-      <li *ngIf="!(isLoggedIn | async)"><a [routerLink]="['/login']">LOGIN</a></li>
-      <li *ngIf="!(isLoggedIn | async)"><a [routerLink]="['/register']">REGISTER</a></li>
-      <li *ngIf="isLoggedIn | async"><a [routerLink]="['/viewLogin']">PERFIL</a></li>
-      <li *ngIf="isLoggedIn | async"><a [routerLink]="['/rutinas']">RUTINAS</a></li>
+      <li><a [routerLink]="['/home']" routerLinkActive="active-link">HOME</a></li>
+      <li><a routerLink="/espacios" routerLinkActive="active-link">ESPACIOS</a></li>
+      <li *ngIf="!(isLoggedIn | async)"><a [routerLink]="['/login']" routerLinkActive="active-link">LOGIN</a></li>
+      <li *ngIf="!(isLoggedIn | async)"><a [routerLink]="['/register']" routerLinkActive="active-link">REGISTER</a></li>
+      <li *ngIf="isLoggedIn | async"><a [routerLink]="['/viewLogin']" routerLinkActive="active-link">PERFIL</a></li>
+      <li *ngIf="isLoggedIn | async"><a [routerLink]="['/rutinas']" routerLinkActive="active-link">RUTINAS</a></li>
       <li *ngIf="isLoggedIn | async"><a href="#" (click)="logout()">CERRAR SESIÓN</a></li> 
     </ul>
   </nav>

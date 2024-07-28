@@ -12,8 +12,6 @@ class RutinaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CoachSerializer(serializers.ModelSerializer):
-    rutina = RutinaSerializer()
-
     class Meta:
         model = Coach
         fields = '__all__'

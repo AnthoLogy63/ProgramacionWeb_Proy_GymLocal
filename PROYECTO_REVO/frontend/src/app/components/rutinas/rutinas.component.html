@@ -24,16 +24,13 @@
       <div class="indicador"><p>Recomendaciones:</p></div>
       <div class="datos"><p id="recomendaciones">{{ dato.recomendaciones }}</p></div>
     </div>
-    <div class="buttons">
-      <button (click)="downloadPdf()">Descargar PDF</button>
-      <button (click)="sendPdf()">Enviar PDF por Correo</button>
-    </div>
   </div>
 </div>
 
 <div class="body-viewLogin" *ngIf="rutinas.length > 0">
   <div class="rutinasContainer" *ngFor="let rutina of rutinas">
     <div class="sectionInfo">
+      
       <div class="indicador"><p>Nombre:</p></div>
       <div class="datos"><p id="nombre_ejercicio">{{ rutina.nombre_ejercicio }}</p></div>
     </div>
@@ -55,8 +52,12 @@
 <div class="body-viewLogin" *ngIf="coaches.length > 0">
   <div class="coachesContainer" *ngFor="let coach of coaches">
     <div class="sectionInfo">
-      <div class="indicador"><p>Nombre:</p></div>
+      <div class="indicador"><p>Nombre del Coach:</p></div>
       <div class="datos"><p id="nombre">{{ coach.nombre }}</p></div>
+    </div>
+    <div class="buttons">
+      <button (click)="downloadPdf()">Descargar PDF</button>
+      <button (click)="sendPdf()">Enviar PDF por Correo</button>
     </div>
   </div>
 </div>

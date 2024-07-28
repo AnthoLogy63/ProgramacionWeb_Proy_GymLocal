@@ -28,8 +28,7 @@ header {
 }
 
 .navmenu ul {
-  list-style-type: none;
-  margin: 0;
+  list-style: none;
   padding: 0;
   display: flex;
   justify-content: flex-end;
@@ -37,60 +36,36 @@ header {
 
 .navmenu ul li {
   margin: 0 15px;
+  position: relative;
 }
 
 .navmenu ul li a {
   color: #fff;
-  
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
   text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 25px; /* Hacer el enlace circular */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición para un efecto suave */
 }
 
-.navmenu ul li a:hover {
-  color: #FFF112; /* Color amarillo */
+.navmenu ul li a:hover,
+.navmenu ul li a.active-link {
+  background-color: #FFF112; /* Fondo circular al pasar el cursor y si está activo */
+  color: #000; /* Color del texto cuando está activo */
 }
-
-/*
-.navmenu ul li a:hover {
-  background-color: #FFF112; 
-} 
-*/
 
 @media (min-width: 760px) {
-    .navmenu ul {
-      flex-direction: row;
-      justify-content: space-around; /* Cambiado para alinear el contenido a la izquierda */
+  .navmenu ul {
+    flex-direction: row;
+    justify-content: space-around; /* Cambiado para alinear el contenido a la izquierda */
   }
 
   .navmenu ul li {
-      margin-right: 4rem; /* Espacio entre elementos de navegación */
+    margin-right: 4rem; /* Espacio entre elementos de navegación */
   }
-}
-
-
-/* Superposición de texto */
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.text-overlay h1 {
-  font-size: 4rem;
-  margin: 0;
-}
-
-.text-overlay .highlight {
-  color: #FFF112; /* Color amarillo */
-}
-
-.text-overlay p {
-  font-size: 1.5rem;
-  margin-top: 20px;
 }
 
 
