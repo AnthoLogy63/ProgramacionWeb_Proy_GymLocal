@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: my-django-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn myproject.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: myproject.settings
+      - key: SECRET_KEY
+        value: your_secret_key
+      - key: DATABASE_URL
+        value: your_database_url
+    autoDeploy: true
