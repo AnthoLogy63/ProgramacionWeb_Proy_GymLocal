@@ -1,3 +1,9 @@
+# Introducción
+Bienvenidos a la presentación de nuestro proyecto final de Programación Web. En este repositorio, hemos reunido el trabajo colaborativo de nuestro equipo para desarrollar una aplicación web que combina el poder de Django en el backend y Angular en el frontend. A lo largo del desarrollo del proyecto, hemos integrado diversas tecnologías para crear una solución robusta, escalable y eficiente.
+
+Este repositorio contiene todos los archivos y documentación necesarios para entender y ejecutar nuestro proyecto. A continuación, presentaremos un informe detallado acerca de los colaboradores, destacando las contribuciones de cada miembro del equipo, así como una explicación más profunda del objetivo y funcionalidades del proyecto.
+
+
 Sistema de Rutinas Automatizado para un Gimnasio local \- Empresa REVO SPORT 
 
 Ajra Huacso Jeans Anthony, Garambel Marín Fernando Miguel, Luque Condori Luis Guillermo, Choquehuanca Berna William Herderson   
