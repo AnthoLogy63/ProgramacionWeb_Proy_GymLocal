@@ -4,7 +4,7 @@ Bienvenidos a la presentación de nuestro proyecto final de Programación Web. E
 Este repositorio contiene todos los archivos y documentación necesarios para entender y ejecutar nuestro proyecto. A continuación, presentaremos un informe detallado acerca de los colaboradores, destacando las contribuciones de cada miembro del equipo, así como una explicación más profunda del objetivo y funcionalidades del proyecto.
 
 
-
+---
 
 
 Sistema de Rutinas Automatizado para un Gimnasio local \- Empresa REVO SPORT 
